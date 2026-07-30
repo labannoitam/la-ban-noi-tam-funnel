@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanh Toán — La Bàn Nội Tâm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7F2; --surface: #FFFFFF; --surface-2: #F5ECE1;
+    --text: #241D16; --text-muted: #5E4F40;
+    --accent: #1D4E89; --accent-soft: rgba(29,78,137,0.09); --accent-deep: #0F2540;
+    --accent-warm: #C1622E;
+    --border: rgba(44,38,32,0.20);
+    --font-h: 'Lora', serif; --font-b: 'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); background: var(--bg); color: var(--text); line-height: 1.6; padding: 40px 16px; }
+  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 32px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(44,38,32,0.08); }
+  h1 { font-family: var(--font-h); font-size: 21px; margin-bottom: 4px; color: var(--text); }
+  .lead { color: var(--text-muted); margin-bottom: 22px; font-size: 14px; }
+  h2.section-title { font-family: var(--font-h); font-size: 15px; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; margin: 20px 0 10px; }
+
+  .summary { background: var(--accent-deep); color: #fff; padding: 18px 20px; border-radius: 12px; margin-bottom: 20px; }
+  .summary-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
+  .summary-total { font-family: var(--font-h); font-size: 22px; font-weight: 800; color: var(--accent-warm); padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 8px; }
+
+  .qr-section { text-align: center; padding: 12px 0 20px; }
+  .qr-section img { max-width: 260px; border: 6px solid var(--surface-2); border-radius: 10px; margin: 0 auto; }
+  .qr-hint { font-size: 13px; color: var(--text-muted); margin-top: 10px; font-style: italic; }
+
+  .info-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 8px; }
+  .info-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 14px; color: var(--text-muted); }
+  .info-row strong { font-family: monospace; font-size: 15px; color: var(--text); }
+
+  .status { padding: 14px; text-align: center; border-radius: 10px; font-weight: 700; font-size: 15px; margin-top: 18px; }
+  .status.pending { background: rgba(197,74,60,0.10); color: #B94A3C; }
+  .status.paid { background: rgba(46,125,50,0.10); color: #2E7D32; }
+  .pulse { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: currentColor; margin-right: 8px; vertical-align: middle; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .checklist { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-top: 14px; display: none; }
+  .checklist.show { display: block; }
+  .checklist h3 { font-family: var(--font-h); font-size: 14px; margin-bottom: 8px; color: var(--text); }
+  .checklist ol { padding-left: 20px; font-size: 13px; color: var(--text-muted); }
+  .checklist li { margin-bottom: 4px; }
+  .recheck-btn { display: block; width: 100%; margin-top: 12px; padding: 10px; background: var(--accent); color: #fff; border-radius: 8px; font-weight: 700; font-size: 14px; text-align: center; border: none; cursor: pointer; font-family: var(--font-b); }
+  .support-link { display: block; text-align: center; margin-top: 10px; font-size: 13px; color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Phương Thức Thanh Toán</h1>
+  <p class="lead">Chuyển khoản ngân hàng (VietQR) — đơn được xác nhận tự động trong 30 giây.</p>
+
+  <div class="summary">
+    <div class="summary-row"><span>Master Class La Bàn Nội Tâm</span><span id="base">399.000đ</span></div>
+    <div class="summary-row summary-total"><span>Tổng</span><span id="total">399.000đ</span></div>
+  </div>
+
+  <h2 class="section-title">Quét mã QR để chuyển khoản</h2>
+  <div class="qr-section">
+    <img id="qrImg" alt="Mã QR chuyển khoản">
+    <p class="qr-hint">Nội dung chuyển khoản sẽ tự động điền đúng cú pháp.</p>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row"><span>Ngân hàng</span><strong>MB Bank</strong></div>
+    <div class="info-row"><span>Số TK</span><strong>0986298666</strong></div>
+    <div class="info-row"><span>Chủ TK</span><strong>NGUYEN THI THU HA</strong></div>
+    <div class="info-row"><span>Nội dung CK</span><strong id="ckContent">—</strong></div>
+    <div class="info-row"><span>Số tiền</span><strong id="amount">—</strong></div>
+  </div>
+
+  <div class="status pending" id="statusBox">
+    <span class="pulse"></span><span id="statusText">Đang chờ giao dịch...</span>
+  </div>
+
+  <div class="checklist" id="troubleshoot">
+    <h3>Chưa nhận được thanh toán</h3>
+    <p style="font-size:13px; color: var(--text-muted); margin-bottom: 8px;">Hệ thống chưa ghi nhận giao dịch chuyển khoản của bạn. Vui lòng kiểm tra lại:</p>
+    <ol>
+      <li>Giao dịch đã được xác nhận trên app ngân hàng.</li>
+      <li>Nội dung chuyển khoản đúng như mã hiển thị ở mục "Nội dung CK" phía trên (VD: LBNT0001).</li>
+      <li>Số tiền chuyển khoản chính xác.</li>
+    </ol>
+    <button class="recheck-btn" id="recheckBtn">Kiểm tra lại</button>
+    <a class="support-link" href="#" id="supportLink">Nếu vẫn gặp vấn đề, vui lòng liên hệ La Bàn Nội Tâm</a>
+  </div>
+</div>
+
+<script>
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzEOV2uzEvMVl6hluKuqfZn5u-0B-NU7a-3B98WorFhYN6pmmfwCMJ8LyiEO5a2RQ3icQ/exec';
+  const BASE_PRICE = 399000;
+
+  const order = JSON.parse(sessionStorage.getItem('order') || '{}');
+  if (!order.orderId) { window.location.href = 'dang-ky.html'; }
+
+  document.getElementById('ckContent').textContent = order.ckContent;
+
+  function formatVnd(n) { return Number(n).toLocaleString('en-US').replace(/,/g, '.'); }
+
+  function updateQR(amount) {
+    const url = 'https://qr.sepay.vn/img?acc=0986298666&bank=MB&amount=' + amount + '&des=' + encodeURIComponent(order.ckContent);
+    document.getElementById('qrImg').src = url;
+    document.getElementById('amount').textContent = formatVnd(amount) + 'đ';
+    document.getElementById('total').textContent = formatVnd(amount) + 'đ';
+  }
+  updateQR(BASE_PRICE);
+
+  // Show the "Chưa nhận được thanh toán" checklist after 60s of pending status
+  setTimeout(() => { document.getElementById('troubleshoot').classList.add('show'); }, 60000);
+
+  document.getElementById('recheckBtn').addEventListener('click', () => {
+    document.getElementById('statusText').textContent = 'Đang kiểm tra lại...';
+    pollStatus(true);
+  });
+
+  async function pollStatus(manual) {
+    try {
+      const res = await fetch(GAS_URL + '?action=getStatus&orderId=' + encodeURIComponent(order.orderId));
+      const json = await res.json();
+      if (json.status === 'PAID') {
+        const box = document.getElementById('statusBox');
+        box.className = 'status paid';
+        document.getElementById('statusText').textContent = '✓ Đã nhận giao dịch · Đang chuyển trang...';
+        setTimeout(() => { window.location.href = 'xac-nhan.html'; }, 1500);
+        return;
+      } else if (manual) {
+        document.getElementById('statusText').textContent = 'Đang chờ giao dịch...';
+      }
+    } catch (err) { console.error('poll failed', err); }
+    if (!manual) setTimeout(() => pollStatus(false), 5000);
+  }
+  pollStatus(false);
+</script>
+</body>
+</html>
