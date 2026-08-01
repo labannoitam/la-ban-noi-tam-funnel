@@ -215,12 +215,13 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .guarantee-box { background: var(--surface); border: 1px solid var(--accent); border-radius: var(--radius); padding: 40px; }
 
 /* Myth busting */
-.compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border); }
-.compare-row:last-child { border-bottom: none; }
-@media (max-width: 700px) { .compare-row { grid-template-columns: 1fr; gap: 6px; } }
-.compare-before::before { content: "TRƯỚC · "; color: var(--text-muted); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; }
-.compare-after { color: var(--text); }
-.compare-after::before { content: "SAU · "; color: var(--accent); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; }
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 14px 0; align-items: stretch; }
+@media (max-width: 700px) { .compare-row { grid-template-columns: 1fr; gap: 10px; } }
+.compare-before { padding: 16px 18px; color: var(--text-muted); }
+.compare-before::before { content: "TRƯỚC · "; color: var(--text-muted); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
+.compare-after { color: var(--text); font-weight: 500; background: linear-gradient(135deg, rgba(29,78,137,0.10) 0%, rgba(193,98,46,0.09) 100%);
+  border: 1px solid rgba(29,78,137,0.18); border-radius: 12px; padding: 16px 18px; box-shadow: 0 8px 20px rgba(29,78,137,0.08); }
+.compare-after::before { content: "SAU · "; color: var(--accent); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
 
 /* FAQ */
 .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
@@ -496,7 +497,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <!-- OFFER STACK -->
 <section class="section section-alt" id="offer">
   <div class="container-narrow">
-    <p class="text-center" style="font-family: var(--font-h); font-style: italic; font-size: 1.15rem; color: var(--accent); margin-bottom: 24px;">Đừng để sự mơ hồ tiếp tục dẫn lối cuộc đời bạn.</p>
+    <p class="text-center" style="font-family: var(--font-art); font-style: italic; font-weight: 700; font-size: clamp(1.4rem, 3.2vw, 2rem); color: var(--accent); margin-bottom: 28px;">Đừng để sự mơ hồ tiếp tục dẫn lối cuộc đời bạn.</p>
     <div class="offer-box">
       <span class="badge">Đăng ký tham gia bạn sẽ nhận được bộ công cụ La bàn nội tâm</span>
       <ul class="offer-list mt-8">
