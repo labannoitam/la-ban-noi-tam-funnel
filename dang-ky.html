@@ -68,9 +68,9 @@
   </ul>
 
   <div class="price-box">
-    <div class="strike">6.500.000 VNĐ</div>
-    <div><span class="save">Tiết kiệm 60%</span></div>
-    <div class="main">399.000 VNĐ</div>
+    <div class="strike">4.696.000 VNĐ</div>
+    <div><span class="save">Tiết kiệm 40%</span></div>
+    <div class="main">199.000 VNĐ</div>
   </div>
 
   <form id="orderForm">
@@ -83,7 +83,7 @@
     <label>Email *</label>
     <input type="email" name="email" required>
 
-    <button type="submit" class="cta" id="submitBtn">Giữ Chỗ Của Tôi — 399K →</button>
+    <button type="submit" class="cta" id="submitBtn">Giữ Chỗ Của Tôi — 199K →</button>
     <p class="error" id="error"></p>
   </form>
 </div>
@@ -106,7 +106,7 @@
       email: form.get('email'),
       bump1: false,
       bump2: false,
-      totalAmount: 399000
+      totalAmount: 199000
     };
 
     try {
@@ -131,7 +131,7 @@
       errEl.textContent = 'Lỗi: ' + err.message + '. Vui lòng thử lại.';
       errEl.style.display = 'block';
       btn.disabled = false;
-      btn.textContent = 'Giữ Chỗ Của Tôi — 399K →';
+      btn.textContent = 'Giữ Chỗ Của Tôi — 199K →';
     }
   });
 </script>
