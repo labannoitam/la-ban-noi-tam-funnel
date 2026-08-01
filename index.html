@@ -53,6 +53,7 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .text-lavender { color: var(--lavender-deep); }
 .hero-title-main { color: var(--accent-warm); font-size: clamp(2.5rem, 6.8vw, 4.4rem); display: inline-block; line-height: 1.1; }
 .hero-subtitle { font-size: clamp(1.05rem, 2vw, 1.35rem) !important; display: inline-block; line-height: 1.4; margin-top: 6px; }
+.hero-title-oneline { color: var(--accent-warm); font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.3; white-space: normal; }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .container-narrow { max-width: var(--max-w-narrow); margin: 0 auto; padding: 0 24px; }
@@ -81,6 +82,18 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
 
+/* Eyebrow dot label (used inside cards for a punchy micro-heading) */
+.eyebrow-dot { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-b); font-weight: 700;
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.eyebrow-dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-warm); flex-shrink: 0; }
+
+/* Sticky mini CTA pinned corner (desktop) */
+.mini-cta { position: fixed; top: 20px; right: 24px; z-index: 60; padding: 12px 22px; background: var(--accent);
+  color: #fff; border-radius: 999px; font-family: var(--font-h); font-weight: 700; font-size: 0.88rem;
+  box-shadow: 0 10px 24px rgba(29,78,137,0.28); transition: transform 0.2s; }
+.mini-cta:hover { transform: translateY(-2px); background: var(--accent-deep); }
+@media (max-width: 700px) { .mini-cta { display: none; } }
+
 /* Hero */
 .hero { padding: clamp(64px, 10vw, 120px) 0 var(--section-py); background: var(--surface-2); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
@@ -97,7 +110,9 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .story-narrative p { font-size: 1.08rem; margin-bottom: 20px; color: var(--text); }
 .story-narrative p.muted { color: var(--text-muted); }
 .story-narrative .pull-quote { font-family: var(--font-accent); font-style: italic; font-size: 1.3rem; color: var(--accent);
-  border-left: 3px solid var(--accent); padding-left: 24px; margin: 32px 0; font-weight: 500; }
+  border-left: 3px solid var(--accent); padding-left: 24px; margin: 32px 0; font-weight: 500; position: relative; }
+.story-narrative .pull-quote::before { content: "\201C"; position: absolute; left: 16px; top: -18px; font-family: var(--font-h);
+  font-size: 3rem; color: var(--accent-warm); opacity: 0.4; font-style: normal; line-height: 1; }
 
 .founder-banner { max-width: 460px; margin: 44px auto; text-align: center; background: var(--surface);
   border: 1px solid var(--border); border-top: 5px solid var(--accent-warm); border-radius: var(--radius);
@@ -118,11 +133,17 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .audience-item.no::before { content: "✕"; background: #A85C52; }
 
 /* Cycle cards */
-.cycle-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
-.cycle-num { font-family: var(--font-h); font-style: italic; font-weight: 600; color: var(--accent); font-size: 1rem; margin-bottom: 10px; }
+.cycle-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
+  box-shadow: 0 14px 36px rgba(44,38,32,0.07); border-left: 4px solid var(--accent-warm); transition: transform 0.2s, box-shadow 0.2s; }
+.cycle-card:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(44,38,32,0.11); }
+.cycle-card:nth-of-type(2) { border-left-color: var(--accent); }
+.cycle-num { font-family: var(--font-b); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-size: 0.78rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.cycle-num::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-warm); flex-shrink: 0; }
 
 /* Reason cards */
-.reason-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.reason-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px;
+  box-shadow: 0 14px 36px rgba(44,38,32,0.07); transition: transform 0.2s, box-shadow 0.2s; }
+.reason-card:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(44,38,32,0.11); }
 .reason-num { font-family: var(--font-h); font-size: 1.8rem; color: var(--accent); font-weight: 700; margin-bottom: 8px; font-style: italic; }
 
 /* Curriculum */
@@ -197,14 +218,16 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 </head>
 <body>
 
+<a href="dang-ky.html" class="mini-cta">ĐĂNG KÝ NGAY</a>
+
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
         <span class="badge">19 & 20 & 21/08/2026 · Live Zoom</span>
-        <h1 class="mt-6"><span class="hero-title-main">Kiến tạo phiên bản trọn vẹn</span><br><em class="accent-italic hero-subtitle">sang một chương mới của cuộc đời</em></h1>
-        <p class="mt-6 line-orange" style="font-size: 1.12rem; max-width: 540px;">Dành cho người đang tìm hướng đi mới để xây dựng sự nghiệp đúng với chính mình và tạo thu nhập 8 con số trong năm đầu tiên.</p>
+        <h1 class="mt-6 hero-title-oneline">Kiến tạo phiên bản trọn vẹn sang một chương mới của cuộc đời</h1>
+        <p class="mt-6 line-orange" style="font-size: 1.12rem; max-width: 540px;">Dành cho người đang <strong class="highlight">tìm hướng đi mới</strong> để <strong class="highlight">xây dựng sự nghiệp</strong> đúng với chính mình và <strong class="highlight">tạo thu nhập</strong> 8 con số trong năm đầu tiên.</p>
         <p class="mt-4" style="max-width: 540px;">Dù bạn đã đi qua nhiều công việc, nhiều khóa học, nhiều trải nghiệm... nhưng vẫn chưa tìm thấy một con đường khiến mình thật sự muốn dấn thân.</p>
         <p class="mt-4" style="max-width: 540px;">Trong 3 ngày của chương trình, bạn sẽ nhìn thấy điều thực sự đang dẫn dắt mọi lựa chọn của mình, để ngừng đi tìm câu trả lời từ những khóa học, lời khuyên hay định hướng ở bên ngoài. Bắt đầu làm chủ cách ra quyết định từ La Bàn Nội Tâm để kiến tạo một sự nghiệp đúng với chính mình.</p>
         <div class="schedule-box">
@@ -245,7 +268,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
       <p class="pull-quote">"Mình phải tìm được đam mê, phải có định hướng thật chắc chắn rồi mới dám thay đổi."</p>
       <div class="founder-banner"><img src="assets/portrait-guarantee.jpg" alt="Ms. Hà Nguyễn"></div>
       <p>Đó không phải điều mình muốn nói đến ở đây. Vì bản chất của việc tìm hướng đi không phải là đi tìm một câu trả lời ở bên ngoài.</p>
-      <p>Điều đắt giá nhất không phải là một quyết định sai. Mà là dành thêm nhiều năm để chờ một ngày mình đủ rõ ràng mới dám bắt đầu. Bởi thời gian không chỉ lấy đi cơ hội. Nó còn lấy đi sự can đảm để sống cuộc đời mình thật sự mong muốn.</p>
+      <p><strong class="highlight">Điều đắt giá nhất không phải là một quyết định sai</strong>. Mà là dành thêm nhiều năm để chờ một ngày mình đủ rõ ràng mới dám bắt đầu. Bởi thời gian không chỉ lấy đi cơ hội. Nó còn lấy đi <strong class="highlight">sự can đảm để sống cuộc đời mình thật sự mong muốn</strong>.</p>
       <p>Và nếu hôm nay bạn vẫn đang loay hoay... Mình sẽ đồng hành từng bước để tìm lại chiếc La bàn nội tâm của bạn.</p>
       <div class="mt-8"><a href="dang-ky.html" class="btn-primary">GIỮ CHỖ CỦA TÔI NGAY</a></div>
     </div>
@@ -306,17 +329,17 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
       <div class="reason-card">
         <div class="reason-num">01</div>
         <h3>Tìm câu trả lời ở bên ngoài, thay vì câu trả lời từ trí tuệ bên trong</h3>
-        <p class="mt-4">Bạn hỏi ý kiến, làm trắc nghiệm, học thêm khóa học, đọc rất nhiều sách... Nhưng không ai có thể biết điều gì đúng với cuộc đời bạn hơn chính bạn. Khi chưa hiểu mình là ai và điều gì thực sự quan trọng, mọi lựa chọn đều chỉ dẫn đến cùng một kết quả mơ hồ.</p>
+        <p class="mt-4">Bạn hỏi ý kiến, làm trắc nghiệm, học thêm khóa học, đọc rất nhiều sách... Nhưng <strong class="highlight">không ai có thể biết điều gì đúng với cuộc đời bạn hơn chính bạn</strong>. Khi chưa hiểu mình là ai và điều gì thực sự quan trọng, mọi lựa chọn đều chỉ dẫn đến cùng một kết quả mơ hồ.</p>
       </div>
       <div class="reason-card">
         <div class="reason-num">02</div>
         <h3>Thay đổi công việc, nhưng chưa có sự chuyển hóa về con người</h3>
-        <p class="mt-4">Bạn đổi công việc, đổi môi trường, đổi mục tiêu... Nhưng những cảm giác chán nản, mất kết nối và hoài nghi vẫn lặp lại. Vì vấn đề không nằm ở công việc. Mà nằm ở cách bạn đang lựa chọn cuộc đời mình.</p>
+        <p class="mt-4">Bạn đổi công việc, đổi môi trường, đổi mục tiêu... Nhưng những cảm giác chán nản, mất kết nối và hoài nghi vẫn lặp lại. Vì <strong class="highlight">vấn đề không nằm ở công việc</strong>. Mà nằm ở cách bạn đang lựa chọn cuộc đời mình.</p>
       </div>
       <div class="reason-card">
         <div class="reason-num">03</div>
         <h3>Tin rằng phải có câu trả lời rồi mới hành động</h3>
-        <p class="mt-4">Bạn luôn chờ đến khi đủ chắc chắn mới quyết định. Nhưng sự rõ ràng không có trước lựa chọn. Sự rõ ràng được tạo ra trong quá trình lựa chọn và trải nghiệm.</p>
+        <p class="mt-4">Bạn luôn chờ đến khi đủ chắc chắn mới quyết định. Nhưng <strong class="highlight">sự rõ ràng không có trước lựa chọn</strong>. Sự rõ ràng được tạo ra trong quá trình lựa chọn và trải nghiệm.</p>
       </div>
     </div>
   </div>
@@ -439,6 +462,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <!-- OFFER STACK -->
 <section class="section section-alt" id="offer">
   <div class="container-narrow">
+    <p class="text-center" style="font-family: var(--font-h); font-style: italic; font-size: 1.15rem; color: var(--accent); margin-bottom: 24px;">Đừng để sự mơ hồ tiếp tục dẫn lối cuộc đời bạn.</p>
     <div class="offer-box">
       <span class="badge">Đăng ký tham gia bạn sẽ nhận được bộ công cụ La bàn nội tâm</span>
       <ul class="offer-list mt-8">
