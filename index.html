@@ -31,7 +31,7 @@
 
   --max-w: 1100px;
   --max-w-narrow: 760px;
-  --section-py: clamp(56px, 9vw, 112px);
+  --section-py: clamp(36px, 5.5vw, 68px);
   --radius: 14px;
 }
 
@@ -55,6 +55,8 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .hero-subtitle { font-size: clamp(1.05rem, 2vw, 1.35rem) !important; display: inline-block; line-height: 1.4; margin-top: 6px; }
 .hero-title-oneline { color: var(--accent-warm); font-size: clamp(1.15rem, 2.4vw, 1.75rem); line-height: 1.3; white-space: nowrap; }
 @media (max-width: 560px) { .hero-title-oneline { white-space: normal; font-size: clamp(1.05rem, 5.5vw, 1.4rem); } }
+.h2-oneline { font-size: clamp(1rem, 2.3vw, 1.7rem); white-space: nowrap; }
+@media (max-width: 560px) { .h2-oneline { white-space: normal; font-size: clamp(0.95rem, 4.6vw, 1.2rem); } }
 
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .container-narrow { max-width: var(--max-w-narrow); margin: 0 auto; padding: 0 24px; }
@@ -252,7 +254,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <!-- TWO VICIOUS CYCLES -->
 <section class="section section-alt" id="cycles">
   <div class="container">
-    <h2>Tại sao càng học nhiều, càng trải nghiệm nhiều... bạn lại càng không biết đâu mới là con đường của mình?</h2>
+    <h2 class="text-warm">Tại sao càng học nhiều, càng trải nghiệm nhiều... bạn lại càng không biết đâu mới là con đường của mình?</h2>
     <p class="mt-6">Bạn không phải người duy nhất có câu hỏi này. Hầu hết những người đang ở bước chuyển của cuộc đời đều mắc kẹt giữa hai vòng xoáy mà rất ít người gọi tên được.</p>
     <div class="wide-banner mt-8"><img src="assets/portrait-panel.jpg" alt="Ms. Hà Nguyễn chia sẻ tại sự kiện"></div>
     <div class="stack mt-12">
@@ -280,7 +282,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <!-- 3 LÝ DO -->
 <section class="section section-alt" id="reasons">
   <div class="container">
-    <h2>Bạn đã thử rất nhiều... nhưng vì sao vẫn chưa tìm được hướng đi của mình?</h2>
+    <h2 class="text-accent">Bạn đã thử rất nhiều... nhưng vì sao vẫn chưa tìm được hướng đi của mình?</h2>
     <p class="mt-6" style="max-width: 760px;">Mình hoàn toàn hiểu. Sau 8 năm làm công việc này, mình thấy có 3 lý do đằng sau điều này:</p>
     <div class="grid-3 mt-12">
       <div class="reason-card">
@@ -320,7 +322,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <!-- FUTURE PACING -->
 <section class="section section-alt" id="future-pacing">
   <div class="container-narrow">
-    <h2>Hãy hình dung về chính mình trong một năm tới...</h2>
+    <h2 class="text-warm h2-oneline">Hãy hình dung về chính mình trong một năm tới...</h2>
     <div class="audience-list mt-8">
       <div class="audience-item">Bạn đã tìm thấy một hướng đi trong công việc thật sự phù hợp với con người mình, sau nhiều năm loay hoay tìm kiếm.</div>
       <div class="audience-item">Bạn biết rõ điều mình cần làm trong 90 ngày tiếp theo, thay vì cứ mãi phân vân giữa quá nhiều lựa chọn.</div>
@@ -354,12 +356,11 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <section class="section" id="curriculum">
   <div class="container">
     <span class="eyebrow">Lộ trình 3 buổi</span>
-    <h2>Hành trình 3 ngày tìm lại "La Bàn Nội Tâm"</h2>
+    <h2 class="text-accent">Hành trình 3 ngày tìm lại "La Bàn Nội Tâm"</h2>
     <p class="mt-4">Dựa trên nền tảng Khai vấn chuyển hóa chuyên sâu.</p>
     <p class="mt-2" style="color: var(--text);"><strong>20:00 | Ngày 19 – 21/08/2026 · Online qua Zoom</strong> — Coach Hà đồng hành trực tiếp, Q&amp;A.</p>
     <div class="stack mt-12">
       <div class="session">
-        <div class="session-num">1</div>
         <div class="session-buoi">Buổi 1</div>
         <h3>Vì sao bạn cứ lặp lại các vòng lặp?</h3>
         <p class="session-subtitle">Hệ thống vô hình đang dẫn dắt những lựa chọn của bạn</p>
@@ -373,7 +374,6 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
         <p class="result">➜ Bạn nhìn thấy gốc rễ của sự mơ hồ và biết điều gì đang thật sự giữ mình đứng yên suốt nhiều năm qua.</p>
       </div>
       <div class="session">
-        <div class="session-num">2</div>
         <div class="session-buoi">Buổi 2</div>
         <h3>Điều gì thực sự dẫn dắt cuộc đời bạn từ bên trong?</h3>
         <p class="session-subtitle">Tìm lại chiếc La bàn nội tâm của chính mình</p>
@@ -387,7 +387,6 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
         <p class="result">➜ Bạn tìm lại chiếc La bàn nội tâm của mình và biết đâu là hướng đi thực sự phù hợp, thay vì tiếp tục sống trong sự mơ hồ.</p>
       </div>
       <div class="session">
-        <div class="session-num">3</div>
         <div class="session-buoi">Buổi 3</div>
         <h3>Làm sao để tin tưởng vào sự lựa chọn của chính mình?</h3>
         <p class="session-subtitle">Thiết kế chương tiếp theo của cuộc đời</p>
@@ -430,7 +429,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
   <div class="container">
     <h2 class="text-warm">Câu chuyện tìm lại La Bàn Nội Tâm</h2>
     <div class="wide-banner mt-8"><img src="assets/portrait-community.jpg" alt="Cộng đồng học viên MCoach"></div>
-    <div class="grid-3 mt-12">
+    <div class="stack mt-12">
       <div class="testimonial-card">
         <div class="testimonial-quote-mark">"</div>
         <div class="testimonial-avatar"><img src="assets/avatar-dieu.jpg" alt="Coach Huyền Diệu"></div>
@@ -498,7 +497,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <section class="section" id="price-justification">
   <div class="container-narrow">
     <div class="story-narrative">
-      <h2 class="text-lavender">Vì sao Master Class La Bàn Nội Tâm chỉ có giá 199K?</h2>
+      <h2 class="text-lavender h2-oneline">Vì sao Master Class La Bàn Nội Tâm chỉ có giá 199K?</h2>
       <p class="mt-6">Mình từng mất gần 10 năm để thử, sai, hoang mang và đi tìm câu trả lời cho chính mình.</p>
       <p>Vì thế, mình chọn để Master Class La bàn Nội tâm có mức phí chỉ 199K, để bất kỳ ai đang ở một ngã rẽ của cuộc đời cũng có thể bắt đầu hành trình này.</p>
       <p class="pull-quote">Thứ đắt nhất trong cuộc đời mình không phải là tiền. Mà là 10 năm sống trong sự mơ hồ, thử rất nhiều nhưng vẫn không biết đâu là con đường thực sự thuộc về mình.</p>
@@ -522,7 +521,7 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
 <!-- MYTH-BUSTING -->
 <section class="section" id="myth-busting">
   <div class="container-narrow">
-    <h2 class="text-lavender">Sau Master Class La Bàn Nội Tâm, bạn sẽ thay đổi như thế nào?</h2>
+    <h2 class="text-lavender">Bạn sẽ thay đổi sau chương trình La bàn nội tâm như thế nào?</h2>
     <div class="mt-12">
       <div class="compare-row"><div class="compare-before">Mơ hồ về hướng đi, không biết mình thực sự muốn gì.</div><div class="compare-after">Hiểu rõ mình thực sự mong muốn và điều gì quan trọng nhất ở giai đoạn này của cuộc đời.</div></div>
       <div class="compare-row"><div class="compare-before">Đứng giữa nhiều lựa chọn, càng nghĩ càng rối, không dám quyết định.</div><div class="compare-after">Có một tiêu chí rõ ràng để đưa ra quyết định, thay vì lựa chọn trong cảm xúc hay nỗi sợ.</div></div>
