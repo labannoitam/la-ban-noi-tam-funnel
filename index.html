@@ -9,7 +9,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -28,6 +28,7 @@
   --font-h: 'Lora', serif;
   --font-b: 'Inter', sans-serif;
   --font-accent: 'Lora', serif;
+  --font-art: 'Playfair Display', serif;
 
   --max-w: 1100px;
   --max-w-narrow: 760px;
@@ -157,17 +158,26 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .reason-num { font-family: var(--font-h); font-size: 1.8rem; color: var(--accent); font-weight: 700; margin-bottom: 8px; font-style: italic; }
 
 /* Curriculum */
-.session { background: linear-gradient(155deg, var(--surface) 0%, rgba(29,78,137,0.04) 100%); border: 1px solid var(--border); border-left: 4px solid var(--accent-warm); border-radius: var(--radius); padding: 32px; box-shadow: 0 14px 36px rgba(44,38,32,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+.session { background: linear-gradient(155deg, var(--surface) 0%, rgba(193,98,46,0.13) 100%); border: 1px solid var(--border); border-left: 4px solid var(--accent-warm); border-radius: var(--radius); padding: 32px; box-shadow: 0 14px 36px rgba(44,38,32,0.06); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
 .session:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(44,38,32,0.1); }
-.session:nth-of-type(2) { background: linear-gradient(155deg, var(--surface) 0%, rgba(29,78,137,0.05) 100%); border-left-color: var(--accent); }
-.session:nth-of-type(3) { background: linear-gradient(155deg, var(--surface) 0%, rgba(69,51,104,0.05) 100%); border-left-color: var(--lavender-deep); }
+.session::after { content: ""; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(193,98,46,0.16) 0%, rgba(193,98,46,0) 72%); pointer-events: none; }
+.session:nth-of-type(2) { background: linear-gradient(155deg, var(--surface) 0%, rgba(29,78,137,0.14) 100%); border-left-color: var(--accent); }
+.session:nth-of-type(2)::after { background: radial-gradient(circle, rgba(29,78,137,0.16) 0%, rgba(29,78,137,0) 72%); }
+.session:nth-of-type(3) { background: linear-gradient(155deg, var(--surface) 0%, rgba(69,51,104,0.15) 100%); border-left-color: var(--lavender-deep); }
+.session:nth-of-type(3)::after { background: radial-gradient(circle, rgba(69,51,104,0.17) 0%, rgba(69,51,104,0) 72%); }
 .session-num { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px;
   background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); border-radius: 50%; font-family: var(--font-h); font-weight: 700; font-size: 1.2rem; margin-bottom: 18px; }
 .session-en { font-family: var(--font-accent); font-style: italic; font-weight: 700; color: var(--accent-warm); font-size: 1.25rem; margin-bottom: 4px; }
-.session-buoi { font-family: var(--font-b); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-warm); font-size: 0.78rem; margin-bottom: 8px; }
+.session-buoi { font-family: var(--font-b); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-warm); font-size: 0.78rem; margin-bottom: 8px; position: relative; z-index: 1; }
 .session:nth-of-type(2) .session-buoi { color: var(--accent); }
 .session:nth-of-type(3) .session-buoi { color: var(--lavender-deep); }
-.session-subtitle { font-family: var(--font-h); font-weight: 600; color: var(--text); font-size: 1rem; margin: 4px 0 2px; }
+.session > h3 { font-family: var(--font-art); font-style: italic; font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.65rem); line-height: 1.25;
+  background: linear-gradient(100deg, var(--accent-warm) 0%, #8a3f18 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--accent-warm);
+  position: relative; z-index: 1; }
+.session:nth-of-type(2) > h3 { background: linear-gradient(100deg, var(--accent) 0%, var(--accent-deep) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.session:nth-of-type(3) > h3 { background: linear-gradient(100deg, var(--lavender-deep) 0%, #2c2049 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.session-subtitle { font-family: var(--font-h); font-weight: 600; color: var(--text); font-size: 1rem; margin: 4px 0 2px; position: relative; z-index: 1; }
 .session-tagline { font-style: italic; color: var(--text-muted); margin: 12px 0 16px; }
 .session ul { list-style: none; padding: 0; }
 .session ul li { padding: 8px 0 8px 24px; position: relative; color: var(--text); font-size: 0.95rem; }
