@@ -172,8 +172,8 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .session:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(44,38,32,0.1); }
 .session-body { display: grid; grid-template-columns: 1fr 220px; gap: 28px; align-items: start; position: relative; z-index: 1; }
 .session-body-text { min-width: 0; }
-.session-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; box-shadow: 0 14px 30px rgba(44,38,32,0.14); }
-@media (max-width: 760px) { .session-body { grid-template-columns: 1fr; } .session-photo { aspect-ratio: 16/9; } }
+.session-photo { width: 100%; max-height: 340px; object-fit: contain; border-radius: 12px; box-shadow: 0 14px 30px rgba(44,38,32,0.14); background: var(--surface-2); }
+@media (max-width: 760px) { .session-body { grid-template-columns: 1fr; } .session-photo { max-height: 280px; } }
 .session::after { content: ""; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%;
   background: radial-gradient(circle, rgba(193,98,46,0.16) 0%, rgba(193,98,46,0) 72%); pointer-events: none; }
 .session:nth-of-type(2) { background: linear-gradient(155deg, var(--surface) 0%, rgba(29,78,137,0.14) 100%); border-left-color: var(--accent); }
