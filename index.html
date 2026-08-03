@@ -173,6 +173,7 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .session-body { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; position: relative; z-index: 1; }
 .session-body-text { min-width: 0; }
 .session-photo { width: 100%; max-height: 480px; object-fit: contain; border-radius: 12px; box-shadow: 0 14px 30px rgba(44,38,32,0.14); background: var(--surface-2); }
+.session-photo-wide { width: 100%; max-height: 420px; object-fit: contain; border-radius: 12px; box-shadow: 0 14px 30px rgba(44,38,32,0.14); background: var(--surface-2); margin: 12px 0 20px; display: block; position: relative; z-index: 1; }
 @media (max-width: 760px) { .session-body { grid-template-columns: 1fr; } .session-photo { max-height: 380px; } }
 .session::after { content: ""; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%;
   background: radial-gradient(circle, rgba(193,98,46,0.16) 0%, rgba(193,98,46,0) 72%); pointer-events: none; }
@@ -206,7 +207,7 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .testimonial-quote-mark { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); font-family: var(--font-h); font-size: 2.4rem; color: var(--accent-warm); opacity: 0.55; line-height: 1; font-style: italic; }
 .testimonial-avatar { width: 92px; height: 92px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px; border: 3px solid var(--accent-warm); position: relative; box-shadow: 0 4px 14px rgba(193,98,46,0.25); }
 .testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.testimonial-card ul, .testimonial-card li { text-align: left; }
+.testimonial-card ul, .testimonial-card li, .testimonial-card p { text-align: left; }
 .testimonial-name { font-family: var(--font-h); font-weight: 700; color: var(--text); font-size: 1.1rem; }
 .testimonial-role { color: var(--accent); font-size: 0.85rem; font-style: italic; margin: 4px 0 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--border); }
 .testimonial-card ul { padding-left: 18px; }
@@ -573,20 +574,18 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
     <div class="stack mt-12">
       <div class="session">
         <div class="session-buoi">Buổi 1</div>
-        <div class="session-body">
-          <div class="session-body-text">
-            <h3>Vì sao bạn cứ lặp lại các vòng lặp?</h3>
-            <p class="session-subtitle">Hệ thống vô hình đang dẫn dắt những lựa chọn của bạn</p>
-            <p class="session-tagline">"Vì sao bạn đã thay đổi nhiều công việc nhưng vẫn chưa tìm được con đường thực sự phù hợp?"</p>
-            <ul>
-              <li>Nhìn thấy hệ thống vô hình gồm niềm tin, mô thức, vai trò và nỗi sợ đang âm thầm chi phối mọi quyết định trong công việc và cuộc sống.</li>
-              <li>Hiểu vì sao khủng hoảng hiện sinh không phải dấu hiệu của thất bại, mà là thời điểm cuộc sống đang buộc bạn phải sống thật với chính mình.</li>
-              <li>Kiểm kê toàn bộ hành trình cuộc đời bằng Life Audit, để nhìn ra những trải nghiệm đã định hình con người bạn hôm nay.</li>
-              <li>Khám phá Belief Mapping, gọi tên chính xác những niềm tin đang khiến bạn mắc kẹt trong cùng một vòng lặp lựa chọn.</li>
-            </ul>
-            <p class="result">➜ Bạn nhìn thấy gốc rễ của sự mơ hồ và biết điều gì đang thật sự giữ mình đứng yên suốt nhiều năm qua.</p>
-          </div>
-          <img class="session-photo" src="assets/buoi-1.jpg" alt="Buổi 1 — Giải mã hệ điều hành">
+        <img class="session-photo-wide" src="assets/buoi-1.jpg" alt="Buổi 1 — Giải mã hệ điều hành">
+        <div class="session-body-text" style="position: relative; z-index: 1;">
+          <h3>Vì sao bạn cứ lặp lại các vòng lặp?</h3>
+          <p class="session-subtitle">Hệ thống vô hình đang dẫn dắt những lựa chọn của bạn</p>
+          <p class="session-tagline">"Vì sao bạn đã thay đổi nhiều công việc nhưng vẫn chưa tìm được con đường thực sự phù hợp?"</p>
+          <ul>
+            <li>Nhìn thấy hệ thống vô hình gồm niềm tin, mô thức, vai trò và nỗi sợ đang âm thầm chi phối mọi quyết định trong công việc và cuộc sống.</li>
+            <li>Hiểu vì sao khủng hoảng hiện sinh không phải dấu hiệu của thất bại, mà là thời điểm cuộc sống đang buộc bạn phải sống thật với chính mình.</li>
+            <li>Kiểm kê toàn bộ hành trình cuộc đời bằng Life Audit, để nhìn ra những trải nghiệm đã định hình con người bạn hôm nay.</li>
+            <li>Khám phá Belief Mapping, gọi tên chính xác những niềm tin đang khiến bạn mắc kẹt trong cùng một vòng lặp lựa chọn.</li>
+          </ul>
+          <p class="result">➜ Bạn nhìn thấy gốc rễ của sự mơ hồ và biết điều gì đang thật sự giữ mình đứng yên suốt nhiều năm qua.</p>
         </div>
       </div>
       <div class="session">
