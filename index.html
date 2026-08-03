@@ -137,8 +137,8 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .photo-grid-4 img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 24px rgba(44,38,32,0.1); }
 @media (max-width: 560px) { .photo-grid-4 { grid-template-columns: 1fr 1fr; gap: 8px; } }
 
-.testi-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-.testi-gallery img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 24px rgba(44,38,32,0.1); transition: transform 0.2s; }
+.testi-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: start; }
+.testi-gallery img { width: 100%; height: auto; object-fit: contain; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 24px rgba(44,38,32,0.1); transition: transform 0.2s; background: var(--surface); }
 .testi-gallery img:hover { transform: translateY(-4px); }
 @media (max-width: 900px) { .testi-gallery { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .testi-gallery { grid-template-columns: repeat(2, 1fr); } }
@@ -170,10 +170,10 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 /* Curriculum */
 .session { background: linear-gradient(155deg, var(--surface) 0%, rgba(193,98,46,0.13) 100%); border: 1px solid var(--border); border-left: 4px solid var(--accent-warm); border-radius: var(--radius); padding: 32px; box-shadow: 0 14px 36px rgba(44,38,32,0.06); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
 .session:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(44,38,32,0.1); }
-.session-body { display: grid; grid-template-columns: 1fr 220px; gap: 28px; align-items: start; position: relative; z-index: 1; }
+.session-body { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; position: relative; z-index: 1; }
 .session-body-text { min-width: 0; }
-.session-photo { width: 100%; max-height: 340px; object-fit: contain; border-radius: 12px; box-shadow: 0 14px 30px rgba(44,38,32,0.14); background: var(--surface-2); }
-@media (max-width: 760px) { .session-body { grid-template-columns: 1fr; } .session-photo { max-height: 280px; } }
+.session-photo { width: 100%; max-height: 480px; object-fit: contain; border-radius: 12px; box-shadow: 0 14px 30px rgba(44,38,32,0.14); background: var(--surface-2); }
+@media (max-width: 760px) { .session-body { grid-template-columns: 1fr; } .session-photo { max-height: 380px; } }
 .session::after { content: ""; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%;
   background: radial-gradient(circle, rgba(193,98,46,0.16) 0%, rgba(193,98,46,0) 72%); pointer-events: none; }
 .session:nth-of-type(2) { background: linear-gradient(155deg, var(--surface) 0%, rgba(29,78,137,0.14) 100%); border-left-color: var(--accent); }
