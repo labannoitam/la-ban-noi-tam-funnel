@@ -6,29 +6,30 @@
 <title>Thanh Toán — La Bàn Nội Tâm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FBF7F2; --surface: #FFFFFF; --surface-2: #F5ECE1;
+    --bg: #FBF7F2; --surface: #FFFFFF; --surface-2: #F2E6D6;
     --text: #241D16; --text-muted: #5E4F40;
     --accent: #1D4E89; --accent-soft: rgba(29,78,137,0.09); --accent-deep: #0F2540;
     --accent-warm: #C1622E;
     --border: rgba(44,38,32,0.20);
-    --font-h: 'Lora', serif; --font-b: 'Inter', sans-serif;
+    --font-h: 'Lora', serif; --font-b: 'Inter', sans-serif; --font-art: 'Playfair Display', serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font-b); background: var(--bg); color: var(--text); line-height: 1.6; padding: 40px 16px; }
-  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 32px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(44,38,32,0.08); }
-  h1 { font-family: var(--font-h); font-size: 21px; margin-bottom: 4px; color: var(--text); }
+  body { font-family: var(--font-b); background: linear-gradient(180deg, var(--bg) 0%, #F7F1E8 100%); color: var(--text); line-height: 1.6; padding: 40px 16px; }
+  .site-logo { display: block; height: 30px; width: auto; margin: 0 auto 20px; opacity: 0.94; }
+  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 36px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 24px 56px rgba(44,38,32,0.10); }
+  h1 { font-family: var(--font-h); font-size: 22px; margin-bottom: 4px; color: var(--text); }
   .lead { color: var(--text-muted); margin-bottom: 22px; font-size: 14px; }
   h2.section-title { font-family: var(--font-h); font-size: 15px; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; margin: 20px 0 10px; }
 
-  .summary { background: var(--accent-deep); color: #fff; padding: 18px 20px; border-radius: 12px; margin-bottom: 20px; }
+  .summary { background: linear-gradient(160deg, var(--accent) 0%, var(--accent-deep) 80%); color: #fff; padding: 20px 22px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 16px 36px rgba(15,37,64,0.22); }
   .summary-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
   .summary-total { font-family: var(--font-h); font-size: 22px; font-weight: 800; color: var(--accent-warm); padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 8px; }
 
   .qr-section { text-align: center; padding: 12px 0 20px; }
-  .qr-section img { max-width: 260px; border: 6px solid var(--surface-2); border-radius: 10px; margin: 0 auto; }
+  .qr-section img { max-width: 260px; border: 6px solid var(--surface-2); border-radius: 10px; margin: 0 auto; box-shadow: 0 10px 24px rgba(44,38,32,0.08); }
   .qr-hint { font-size: 13px; color: var(--text-muted); margin-top: 10px; font-style: italic; }
 
   .info-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 8px; }
@@ -46,12 +47,13 @@
   .checklist h3 { font-family: var(--font-h); font-size: 14px; margin-bottom: 8px; color: var(--text); }
   .checklist ol { padding-left: 20px; font-size: 13px; color: var(--text-muted); }
   .checklist li { margin-bottom: 4px; }
-  .recheck-btn { display: block; width: 100%; margin-top: 12px; padding: 10px; background: var(--accent); color: #fff; border-radius: 8px; font-weight: 700; font-size: 14px; text-align: center; border: none; cursor: pointer; font-family: var(--font-b); }
+  .recheck-btn { display: block; width: 100%; margin-top: 12px; padding: 10px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: #fff; border-radius: 8px; font-weight: 700; font-size: 14px; text-align: center; border: none; cursor: pointer; font-family: var(--font-b); box-shadow: 0 8px 18px rgba(29,78,137,0.24); }
   .support-link { display: block; text-align: center; margin-top: 10px; font-size: 13px; color: var(--accent); }
 </style>
 </head>
 <body>
 <div class="container">
+  <img src="assets/logo.png" alt="MCoach" class="site-logo">
   <h1>Phương Thức Thanh Toán</h1>
   <p class="lead">Chuyển khoản ngân hàng (VietQR) — đơn được xác nhận tự động trong 30 giây.</p>
 
@@ -87,7 +89,7 @@
       <li>Số tiền chuyển khoản chính xác.</li>
     </ol>
     <button class="recheck-btn" id="recheckBtn">Kiểm tra lại</button>
-    <a class="support-link" href="#" id="supportLink">Nếu vẫn gặp vấn đề, vui lòng liên hệ La Bàn Nội Tâm</a>
+    <a class="support-link" href="mailto:Coachhanguyen@gmail.com" id="supportLink">Nếu vẫn gặp vấn đề, vui lòng liên hệ La Bàn Nội Tâm</a>
   </div>
 </div>
 
@@ -110,8 +112,11 @@
   }
   updateQR(BASE_PRICE);
 
-  // Show the "Chưa nhận được thanh toán" checklist after 60s of pending status
-  setTimeout(() => { document.getElementById('troubleshoot').classList.add('show'); }, 60000);
+  // Show the "Chưa nhận được thanh toán" checklist after 60s, only if still unpaid
+  let paidConfirmed = false;
+  const troubleshootTimer = setTimeout(() => {
+    if (!paidConfirmed) document.getElementById('troubleshoot').classList.add('show');
+  }, 60000);
 
   document.getElementById('recheckBtn').addEventListener('click', () => {
     document.getElementById('statusText').textContent = 'Đang kiểm tra lại...';
@@ -123,6 +128,9 @@
       const res = await fetch(GAS_URL + '?action=getStatus&orderId=' + encodeURIComponent(order.orderId));
       const json = await res.json();
       if (json.status === 'PAID') {
+        paidConfirmed = true;
+        clearTimeout(troubleshootTimer);
+        document.getElementById('troubleshoot').classList.remove('show');
         const box = document.getElementById('statusBox');
         box.className = 'status paid';
         document.getElementById('statusText').textContent = '✓ Đã nhận giao dịch · Đang chuyển trang...';

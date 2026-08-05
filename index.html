@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiến Tạo Phiên Bản Trọn Vẹn - Sang Chương Mới Cuộc Đời — Master Class cùng Ms. Hà Nguyễn</title>
+<title>Ngừng Trăn Trở Với Con Đường Sự Nghiệp — Master Class La Bàn Nội Tâm cùng Ms. Hà Nguyễn</title>
 <meta name="description" content="Master Class 3 buổi Live Zoom giúp bạn tìm lại La Bàn Nội Tâm, ra quyết định đúng cho sự nghiệp từ sự rõ ràng bên trong. Chỉ 199.000đ.">
-<meta property="og:image" content="assets/portrait-hero.jpg">
+<meta property="og:image" content="assets/portrait-story.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,21 +137,38 @@ em.accent-italic { font-family: var(--font-accent); font-style: italic; color: v
 .photo-grid-4 img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 24px rgba(44,38,32,0.1); }
 @media (max-width: 560px) { .photo-grid-4 { grid-template-columns: 1fr 1fr; gap: 8px; } }
 
-.testi-gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: start; }
-.testi-gallery img { width: 100%; height: auto; object-fit: contain; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 24px rgba(44,38,32,0.1); transition: transform 0.2s; background: var(--surface); }
-.testi-gallery img:hover { transform: translateY(-4px); }
-@media (max-width: 900px) { .testi-gallery { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 560px) { .testi-gallery { grid-template-columns: repeat(2, 1fr); } }
+.testi-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.testi-frame { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 12px;
+  box-shadow: 0 12px 28px rgba(44,38,32,0.09); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+  overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.testi-frame:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(44,38,32,0.13); }
+.testi-frame img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
+@media (max-width: 560px) { .testi-gallery { grid-template-columns: 1fr; } .testi-frame { aspect-ratio: 5/4; } }
+
+/* Mini case mentions (avatar + short quote, used inline within narrative sections) */
+.mini-case { display: flex; gap: 16px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; margin: 20px 0; box-shadow: 0 10px 24px rgba(44,38,32,0.06); }
+.mini-case-avatar { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--accent-warm); }
+.mini-case-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.mini-case-body { flex: 1; min-width: 0; }
+.mini-case-name { font-family: var(--font-h); font-weight: 700; color: var(--text); font-size: 1rem; }
+.mini-case-role { color: var(--accent); font-size: 0.82rem; font-style: italic; margin-bottom: 8px; }
+.mini-case-body p { font-size: 0.95rem; margin: 0; color: var(--text-muted); }
+@media (max-width: 500px) { .mini-case { flex-direction: column; align-items: center; text-align: center; } }
+
+/* Compact buổi recap block (used in OFFER section) */
+.buoi-recap { padding: 16px 0; border-bottom: 1px dashed var(--border); }
+.buoi-recap:last-child { border-bottom: none; }
+.buoi-recap p { color: var(--text); font-size: 0.98rem; }
 
 /* Audience checklist */
-.audience-list { display: grid; gap: 12px; }
-.audience-item { background: var(--surface); padding: 18px 24px 18px 56px; border-radius: 10px; position: relative;
-  color: var(--text); border: 1px solid var(--border); }
-.audience-item::before { content: "✓"; position: absolute; left: 20px; top: 18px; width: 22px; height: 22px;
+.audience-list { display: grid; gap: 22px; }
+.audience-item { padding: 0 0 0 44px; position: relative; color: var(--text); font-size: 1.08rem; font-weight: 600; line-height: 1.6; }
+.audience-item::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 26px; height: 26px;
   background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 0.8rem; }
-.audience-item.no { padding-left: 56px; }
-.audience-item.no::before { content: "✕"; background: #A85C52; }
+  font-weight: 700; font-size: 0.85rem; box-shadow: 0 6px 14px rgba(29,78,137,0.28); }
+.audience-item strong { color: var(--accent-warm); }
+.audience-item.no::before { content: "✕"; background: #A85C52; box-shadow: 0 6px 14px rgba(168,92,82,0.28); }
+.audience-item.no strong { color: #A85C52; }
 
 /* Cycle cards */
 .cycle-card { background: linear-gradient(155deg, var(--surface) 0%, rgba(193,98,46,0.05) 100%); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
@@ -271,306 +288,131 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
     <img src="assets/logo.png" alt="MCoach" class="site-logo">
     <div class="hero-grid">
       <div>
-        <span class="badge">19 & 20 & 21/08/2026 · Live Zoom</span>
-        <h1 class="mt-6 hero-title-oneline">Kiến tạo phiên bản trọn vẹn - sang chương mới cuộc đời</h1>
-        <p class="mt-6 line-orange" style="font-size: 1.12rem; max-width: 540px;">Dành cho người đang <strong class="highlight">tìm hướng đi mới</strong> để <strong class="highlight">xây dựng sự nghiệp</strong> đúng với chính mình và <strong class="highlight">tạo thu nhập</strong> 8 con số trong năm đầu tiên.</p>
-        <p class="mt-4" style="max-width: 540px;">Dù bạn đã đi qua nhiều công việc, nhiều khóa học, nhiều trải nghiệm... nhưng vẫn chưa tìm thấy một con đường khiến mình thật sự muốn dấn thân.</p>
-        <p class="mt-4" style="max-width: 540px;">Trong 3 ngày của chương trình, bạn sẽ nhìn thấy điều thực sự đang dẫn dắt mọi lựa chọn, để ngừng đi tìm câu trả lời từ những khóa học, lời khuyên hay định hướng ở bên ngoài. Bắt đầu làm chủ cách ra quyết định từ La Bàn Nội Tâm để kiến tạo một sự nghiệp đúng với chính mình.</p>
-        <div class="schedule-box">
-          <div class="schedule-item"><strong>20h, 19 & 20 & 21/08/2026</strong>Live Zoom – 90 phút x 3 buổi</div>
-        </div>
-        <div class="mt-8"><a href="dang-ky.html" class="btn-primary">TÔI CHỌN KIẾN TẠO, ĐĂNG KÝ NGAY</a></div>
+        <span class="badge">20h · 19, 20 &amp; 21/08/2026 · Live Zoom · 90 phút/buổi</span>
+        <h1 class="mt-6">Ngừng Trăn Trở Với <span class="text-warm">Con Đường Sự Nghiệp</span> Và Tìm Ra Hướng Đi Phù Hợp Với Con Người Bạn</h1>
+        <p class="mt-6" style="font-size: 1.1rem; max-width: 540px;">Dành cho người đã đổi nhiều vị trí công việc, học nhiều khóa học nhưng vẫn chưa tìm ra hướng đi khiến mình thực sự dấn thân trọn vẹn.</p>
+        <div class="mt-8"><a href="dang-ky.html" class="btn-primary">TÔI CHỌN KIẾN TẠO — ĐĂNG KÝ NGAY</a></div>
+        <p class="price-hook">✓ Gần 500 học viên đã đồng hành &nbsp; · &nbsp; ✓ Hoàn tiền 100% nếu không phù hợp</p>
       </div>
       <div class="hero-portrait"><img src="assets/portrait-hero.jpg" alt="Ms. Hà Nguyễn — La Bàn Nội Tâm"></div>
     </div>
   </div>
 </section>
 
-
-
-
-
-
-<!-- TWO VICIOUS CYCLES -->
-<section class="section section-alt" id="cycles">
-  <div class="container">
-    <h2 class="text-warm">Tại sao càng học nhiều, càng trải nghiệm nhiều... bạn lại càng không biết đâu mới là con đường của mình?</h2>
-    <p class="mt-6">Bạn không phải người duy nhất có câu hỏi này. Hầu hết những người đang ở bước chuyển của cuộc đời đều mắc kẹt giữa hai vòng xoáy mà rất ít người gọi tên được.</p>
-    <div class="wide-banner mt-8"><img src="assets/portrait-panel.jpg" alt="Ms. Hà Nguyễn chia sẻ tại sự kiện"></div>
-    <div class="stack mt-12">
-      <div class="cycle-card">
-        <div class="cycle-num">Vòng xoáy thứ nhất</div>
-        <h3>"Rốt cuộc mình thực sự muốn gì?"</h3>
-        <p class="mt-4">Bạn đã đọc sách. Đã làm các bài trắc nghiệm tính cách, giá trị, điểm mạnh. Đã trải nghiệm nhiều công việc với hy vọng sẽ tìm thấy điều thật sự phù hợp.</p>
-        <p class="mt-4">Nhưng mỗi khi đứng trước một lựa chọn quan trọng, bạn vẫn phân vân: "Đây có thật sự là con đường của mình không?"</p>
-        <p class="mt-4">Bạn hiểu bản thân hơn trước, nhưng vẫn chưa đủ rõ ràng để đưa ra một lựa chọn mà mình thật sự tin tưởng để bắt đầu.</p>
-      </div>
-      <div class="cycle-card">
-        <div class="cycle-num">Vòng xoáy thứ hai</div>
-        <h3>"Mình biết mình không muốn tiếp tục như cũ, nhưng không biết bắt đầu từ đâu."</h3>
-        <p class="mt-4">Hãy thử ngồi xuống và tự hỏi chính mình rằng: Rốt cuộc mình muốn sống cuộc đời như thế nào?</p>
-        <p class="mt-4">Bạn có đang đi qua nhiều công việc, học nhiều khóa học, trải nghiệm nhiều điều... nhưng vẫn chưa tìm thấy một hướng đi khiến mình thật sự muốn gắn bó và dấn thân?</p>
-        <p class="mt-4">Bên trong cuộc sống vẫn ổn, nhưng luôn có một cảm giác mơ hồ, trống rỗng, như thể mình đang sống một cuộc đời không thực sự thuộc về mình?</p>
-        <p class="mt-4">Thậm chí bạn đứng trước rất nhiều lựa chọn: ở lại hay nghỉ việc, tiếp tục hay bắt đầu, an toàn hay dấn thân... nhưng càng nghĩ càng rối, vì sợ chọn sai sẽ phải trả giá bằng nhiều năm của cuộc đời?</p>
-        <p class="mt-4">Bạn đã nghĩ đến chuyện chuyển nghề. Đã từng học thêm một kỹ năng mới. Đã thử bắt đầu một công việc khác. Nhưng rồi lại dừng lại.</p>
-        <p class="mt-4">Không phải vì thiếu năng lực. Bạn bắt đầu tự hỏi: "Hay là mình chưa đủ cố gắng?"</p>
-      </div>
+<!-- LEAD -->
+<section class="section" id="lead">
+  <div class="container-narrow">
+    <div class="story-narrative">
+      <h2 style="letter-spacing: -0.01em;">Tại sao càng đọc nhiều sách self-help, càng làm đủ bài trắc nghiệm, công cụ hiểu bản thân, đổi 3-4 vị trí công việc chỉ trong vài năm... thì đến cuối ngày vẫn <span class="text-warm">cảm giác không biết mình thực sự muốn gì?</span></h2>
+      <p class="mt-6">Không phải vì bạn lười. Không phải vì bạn thiếu năng lực.</p>
+      <p>Mà vì bạn đang đi tìm câu trả lời ở bên ngoài — trong khi câu trả lời chỉ có thể đến từ một chỗ duy nhất: <strong class="highlight">bên trong chính mình</strong>.</p>
+      <p>Đứng giữa những lựa chọn — ở lại hay nghỉ việc, an toàn hay dấn thân — càng nghĩ càng rối. Vì sợ chọn sai sẽ phải trả giá bằng nhiều năm của cuộc đời.</p>
+      <p><strong>Có 3 lý do đằng sau chuyện này. Và lý do thứ hai có thể sẽ khiến bạn hơi khó chịu:</strong></p>
     </div>
-    <p class="mt-12 pull-quote" style="max-width: 720px; margin-left:auto; margin-right:auto;">Không. Bạn không thiếu sự cố gắng. Bạn chỉ chưa có một tiến trình giúp kết nối la bàn nội tâm với nhân dạng bạn muốn trở thành để từ đó tự tin lựa chọn và từng bước kiến tạo một công việc phản ánh đúng con người mình.</p>
-  </div>
-</section>
-<!-- 3 LÝ DO -->
-<section class="section section-alt" id="reasons">
-  <div class="container">
-    <h2 class="text-accent">Bạn đã thử rất nhiều... nhưng vì sao vẫn chưa tìm được hướng đi của mình?</h2>
-    <p class="mt-6" style="max-width: 760px;">Mình hoàn toàn hiểu. Sau 8 năm làm công việc này, mình thấy có 3 lý do đằng sau điều này:</p>
-    <div class="grid-3 mt-12">
+    <div class="stack mt-8">
       <div class="reason-card">
         <div class="reason-num">01</div>
-        <h3>Tìm câu trả lời ở bên ngoài, thay vì câu trả lời từ trí tuệ bên trong</h3>
-        <p class="mt-4">Bạn hỏi ý kiến, làm trắc nghiệm, học thêm khóa học, đọc rất nhiều sách... Nhưng <strong class="highlight">không ai có thể biết điều gì đúng với cuộc đời bạn hơn chính bạn</strong>. Khi chưa hiểu mình là ai và điều gì thực sự quan trọng, mọi lựa chọn đều chỉ dẫn đến cùng một kết quả mơ hồ.</p>
+        <p>Bạn tìm câu trả lời từ trắc nghiệm, sách vở, lời khuyên — nhưng <strong class="highlight">không ai biết điều gì đúng với cuộc đời bạn hơn chính bạn.</strong></p>
       </div>
       <div class="reason-card">
         <div class="reason-num">02</div>
-        <h3>Thay đổi công việc, nhưng chưa có sự chuyển hóa về con người</h3>
-        <p class="mt-4">Bạn đổi công việc, đổi môi trường, đổi mục tiêu... Nhưng những cảm giác chán nản, mất kết nối và hoài nghi vẫn lặp lại. Vì <strong class="highlight">vấn đề không nằm ở công việc</strong>. Mà nằm ở cách bạn đang lựa chọn cuộc đời mình.</p>
+        <p>Bạn đổi công việc, đổi mục tiêu — nhưng vấn đề chưa bao giờ nằm ở công việc. <strong class="highlight">Nó nằm ở cách bạn đang lựa chọn.</strong></p>
       </div>
       <div class="reason-card">
         <div class="reason-num">03</div>
-        <h3>Tin rằng phải có câu trả lời rồi mới hành động</h3>
-        <p class="mt-4">Bạn luôn chờ đến khi đủ chắc chắn mới quyết định. Nhưng <strong class="highlight">sự rõ ràng không có trước lựa chọn</strong>. Sự rõ ràng được tạo ra trong quá trình lựa chọn và trải nghiệm.</p>
+        <p>Bạn nghĩ phải chắc chắn rồi mới dám hành động. Nhưng <strong class="highlight">sự rõ ràng không có trước lựa chọn</strong> — nó được tạo ra trong lúc bạn lựa chọn.</p>
       </div>
     </div>
-  </div>
-</section>
-<!-- ORIGIN STORY -->
-<section class="section" id="story">
-  <div class="container-narrow">
-    <div class="story-narrative">
-      <span class="eyebrow">Khoảnh khắc đã thay đổi cuộc đời mình...</span>
-      <p>Hơn 10 năm trước, mình cũng từng là một người rất loay hoay. Không phải vì mình lười biếng.</p>
-      <p>Cũng không phải vì mình không có năng lực, mà vì mình không biết mình thực sự là ai và mình muốn sống cuộc đời như thế nào.</p>
-      <p>Mình học ngành kỹ thuật, ra trường rồi đi làm văn phòng, hỗ trợ dự án, rồi nghỉ sinh 2 con liên tiếp. Trải qua nhiều công việc khác nhau, mỗi lần thay đổi công việc, mình lại tự hỏi:</p>
-      <p class="pull-quote">"Có phải đây là điều mình muốn làm cả đời không?"</p>
-      <p>Nhưng câu trả lời luôn là... "Mình không chắc chắn về điều gì cả".</p>
-      <p>Có những lần gặp lại bạn bè, mình ngại nói về công việc của mình. Nhìn mọi người đều có một con đường rõ ràng, còn mình thì cứ thay đổi hết công việc này đến công việc khác. Trong lòng luôn có một cảm giác rất khó gọi tên.</p>
-      <p>Có phải mình đang kém cỏi hơn người khác? Hay mình là người không đủ kiên trì?</p>
-      <p>Nhìn bên ngoài, cuộc sống của mình vẫn rất bình thường. Có gia đình, có con, có công việc.</p>
-      <p>Nhưng bên trong... Mình ngày càng mất kết nối với chính mình, không biết điều gì thật sự quan trọng. Không biết mình giỏi điều gì. Không biết mình muốn trở thành ai.</p>
-      <p><strong class="highlight">Điều đáng sợ nhất không phải là chưa tìm thấy câu trả lời. Mà là mỗi năm trôi qua... Mình vẫn tiếp tục sống trong sự mơ hồ đó.</strong></p>
-      <p>Rồi mình bắt đầu học Khai vấn.</p>
+    <div class="story-narrative mt-12">
+      <p><strong>Trong 3 buổi tối tới, đây là những gì mình sẽ chia sẻ cho bạn:</strong></p>
+      <ul style="margin: 16px 0 20px 20px; color: var(--text);">
+        <li style="margin-bottom: 12px;">Bài tập <strong>Life Audit</strong> giúp bạn nhìn ra chính xác điều gì đã âm thầm định hình mọi lựa chọn của mình suốt nhiều năm qua — chỉ trong một buổi.</li>
+        <li style="margin-bottom: 12px;">Cách dùng <strong>Belief Mapping</strong> để gọi tên niềm tin đang giữ bạn mắc kẹt trong cùng một vòng lặp — thứ mà gần 500 học viên trước bạn đã dùng để bước ra.</li>
+        <li style="margin-bottom: 12px;">Vì sao "khủng hoảng hiện sinh" bạn đang trải qua không phải dấu hiệu thất bại — mà là tín hiệu cuộc sống đang buộc bạn phải lựa chọn sống thật với chính mình.</li>
+        <li>Cách thiết kế một <strong>lộ trình 90 ngày</strong>, để bạn biết chính xác bước đầu tiên cần làm — thay vì tiếp tục chờ một sự chắc chắn không bao giờ đến.</li>
+      </ul>
+      <p><strong>10 năm trước, mình cũng loay hoay y như vậy.</strong></p>
+      <p>Là người học ngành kỹ thuật. Ra trường, đi làm văn phòng. Rồi nghỉ sinh 2 con liên tiếp. Đổi hết công việc này đến công việc khác — và mỗi lần đổi, mình lại tự hỏi: "Có phải đây là điều mình muốn làm cả đời không?"</p>
+      <p class="pull-quote">Câu trả lời luôn là: không chắc.</p>
       <div class="founder-banner"><img src="assets/portrait-story.jpg" alt="Ms. Hà Nguyễn"></div>
-      <p>Ban đầu, mình cũng nghĩ coaching sẽ giúp mình tìm ra một hướng đi mới. Nhưng điều mình nhận được còn lớn hơn thế. Mình bắt đầu nhìn thấy "hệ điều hành" đã âm thầm dẫn dắt mọi lựa chọn của mình suốt nhiều năm.</p>
-      <p class="muted">Đó là những niềm tin rằng:</p>
-      <ul style="margin: 0 0 20px 20px; color: var(--text);">
-        <li>Mình phải giỏi hơn mới đủ giá trị.</li>
-        <li>Mình phải làm hài lòng mọi người.</li>
-        <li>Mình phải chọn đúng ngay từ đầu.</li>
-        <li>Mình không được phép thất bại.</li>
-      </ul>
-      <p>Chính những niềm tin ấy khiến mình luôn nghi ngờ bản thân, so sánh với người khác và không dám lựa chọn điều mình thực sự mong muốn.</p>
-      <p>Sống theo những khuôn mẫu định sẵn của xã hội. Và vận hành theo la bàn không dành cho mình để ngày càng thấy mệt mỏi, mất động lực và dễ bỏ cuộc giữa chừng.</p>
-      <p>Và khi đi theo lối mòn đó quá lâu, cảm thấy vô định, trống rỗng, vì bản thân mất kết nối với nhu cầu thực sự ở bên trong.</p>
-      <p>Khi bắt đầu thực hành khai vấn, lần đầu tiên sau rất nhiều năm... Mình không còn đi tìm câu trả lời ở bên ngoài nữa. Mình bắt đầu học cách lắng nghe chính mình. Mình gọi đó là tìm lại chiếc La Bàn Nội Tâm.</p>
-      <p class="muted">Suốt 8 năm qua...</p>
-      <p class="pull-quote">Mình chỉ kiên trì làm một việc. Đi tìm sự rõ ràng từ bên trong cho chính mình. Và đồng hành cùng người khác tìm lại sự rõ ràng ấy.</p>
-      <p>Lựa chọn đó đã đưa mình đi qua hành trình từ một người coach cá nhân, với những phiên coach đầu tiên vài trăm nghìn, đến hành trình đồng hành chuyên sâu cho khách hàng cá nhân trị giá vài trăm triệu đồng. Rồi mình phát triển hơn khi trở thành một người chia sẻ, đào tạo về khai vấn chuyển hóa chuyên sâu.</p>
-      <p>Mình không chỉ tìm ra một hướng đi sự nghiệp thực sự phù hợp với bản thân, mà còn thay đổi cách mình hiện diện với cuộc sống.</p>
-      <p>Vượt qua những niềm tin giới hạn về bản thân để phát triển công việc kinh doanh. Có một lối sống cân bằng, hài hòa giữa gia đình, công việc, và mở rộng nội tâm mỗi ngày.</p>
-      <p>Cách mình từng bước kiến tạo sự trọn vẹn ở bên trong nội tâm, để có được sự đủ đầy trong các khía cạnh đời sống.</p>
-      <p>Từ một người luôn nghi ngờ bản thân, sợ chọn sai và đi tìm câu trả lời ở bên ngoài...</p>
-      <p><strong class="highlight">Mình trở thành một người đủ tin vào giá trị của mình, đủ rõ ràng để kiến tạo một sự nghiệp đúng với chính mình và đủ vững vàng để bước qua những thử thách của cuộc sống mà không đánh mất phương hướng.</strong></p>
-      <p>Đó không phải là vì mình có mọi câu trả lời. Mà vì đã tìm lại được chiếc La Bàn Nội Tâm của chính mình.</p>
-      <p class="pull-quote">Nhưng điều tự hào nhất... Không phải là số học viên. Không phải là doanh thu. Cũng không phải là vị trí mình đang có hôm nay.</p>
-      <p>Điều mình trân trọng nhất là... Không còn sống trong nỗi sợ phải chứng minh giá trị của bản thân. Mình không còn chạy theo định nghĩa thành công của người khác. Mình hiểu điều gì là giá trị cốt lõi của mình.</p>
-      <p>Và ngay cả khi làm kinh doanh, có những lúc thuận lợi, có những lúc đầy thử thách... Mình vẫn biết mình đang đi đâu. Bởi lần đầu tiên trong cuộc đời...</p>
-      <p>Mình có một chiếc La Bàn Nội Tâm đủ vững để dẫn đường cho chính mình.</p>
-      <p class="muted mt-8">Khi đồng hành với gần 500 học viên và khách hàng...</p>
-      <div class="photo-grid-4">
-        <img src="assets/hoc-vien-zoom-1.png" alt="Buổi coaching nhóm cùng học viên MCoach">
-        <img src="assets/hoc-vien-zoom-2.png" alt="Cộng đồng học viên MCoach trên Zoom">
-        <img src="assets/hoc-vien-group-1.jpg" alt="Học viên MCoach gặp gỡ ngoài đời">
-        <img src="assets/hoc-vien-group-2.jpg" alt="Học viên MCoach trong buổi lễ tốt nghiệp">
-      </div>
-      <p>Mình nhận ra một điều rất giống nhau, thường điều khiến người ta mắc kẹt chưa bao giờ là thiếu năng lực. Hầu hết nhiều người rất chăm chỉ. Đã học rất nhiều. Đã cố gắng rất nhiều.</p>
-      <p>Điều khiến họ chưa thể bước tiếp... Là họ chưa đủ tin vào chính mình để đưa ra một lựa chọn.</p>
-      <p>Và khi chưa có sự rõ ràng ở bên trong... Họ sẽ tiếp tục đi tìm thêm một khóa học. Một lời khuyên. Một định hướng mới.</p>
-      <p>Trong khi điều họ thực sự cần... Là tìm lại chiếc La Bàn Nội Tâm của chính mình.</p>
-      <p class="muted">Đó cũng là lý do La Bàn Nội Tâm ra đời.</p>
+      <p>Rồi mình học Khai vấn. Và nhận ra điều mình thiếu không phải là một hướng đi mới. Mà là một cách lắng nghe chính mình mà chưa ai từng dạy mình cả.</p>
+      <p>8 năm sau, mình đã đồng hành cùng gần 500 học viên tìm lại đúng thứ đó. Mình gọi nó là <strong class="highlight">La Bàn Nội Tâm</strong>.</p>
+      <p>Không phải vì mình có sẵn mọi câu trả lời cho họ. Mà vì mình giúp họ tìm lại câu trả lời của chính mình — điều không một bài trắc nghiệm hay khóa học nào làm được.</p>
+      <p>Và mình sắp chia sẻ cho bạn cách tìm lại chiếc la bàn đó — trong 3 buổi tối tới đây.</p>
+      <div class="text-center mt-8"><a href="dang-ky.html" class="btn-primary">TÔI CHỌN KIẾN TẠO — ĐĂNG KÝ NGAY</a></div>
     </div>
   </div>
 </section>
 
-<!-- QUICK WINS -->
-<section class="section section-alt" id="quick-wins">
+<!-- VÒNG LẶP 1 -->
+<section class="section section-alt" id="vong-lap-1">
   <div class="container">
-    <h2 class="text-accent">Đã có rất nhiều người đi hành trình tìm lại la bàn nội tâm</h2>
-    <div class="grid-3 mt-12">
-      <div class="reason-card">
-        <h3>Coach Huyền Diệu</h3>
-        <p class="mt-4">Đã đi qua nhiều công việc, nhiều cộng đồng phát triển bản thân nhưng vẫn chưa tìm thấy con đường sự nghiệp của mình. Sau 3 năm trên hành trình Khai vấn Chuyển hóa:</p>
-        <ul style="margin: 12px 0 0 20px; color: var(--text);">
-          <li>Trở thành Coach toàn thời gian.</li>
-          <li>Xây dựng ngách dành cho phụ nữ sau đổ vỡ.</li>
-          <li>Tạo ra gói coaching trị giá <span class="highlight">6.000 USD</span>.</li>
+    <span class="eyebrow">Vòng lặp 1</span>
+    <h2 class="text-warm">"Mình đã cố gắng rất nhiều rồi, sao vòng lặp chán nản, vô định vẫn không thay đổi?"</h2>
+    <div class="wide-banner mt-8"><img src="assets/portrait-panel.jpg" alt="Ms. Hà Nguyễn chia sẻ tại sự kiện"></div>
+    <div class="container-narrow" style="padding: 0; margin-top: 40px;">
+      <div class="story-narrative">
+        <p>Đây là câu hỏi mình nghe nhiều nhất. Và câu trả lời luôn khiến người ta bất ngờ.</p>
+        <p class="pull-quote">Vấn đề chưa bao giờ là bạn thiếu cố gắng.</p>
+        <p>Khi mình bắt đầu học Khai vấn, mình cũng nghĩ mình chỉ cần tìm ra một hướng đi mới. Nhưng thứ mình nhìn thấy còn lớn hơn thế.</p>
+        <p>Mình nhìn thấy một "hệ điều hành" đã âm thầm dẫn dắt mọi lựa chọn của mình suốt nhiều năm. Đó là 4 niềm tin:</p>
+        <ul style="margin: 0 0 20px 20px; color: var(--text);">
+          <li>Mình phải giỏi hơn mới đủ giá trị.</li>
+          <li>Mình phải làm hài lòng mọi người.</li>
+          <li>Mình phải chọn đúng ngay từ đầu.</li>
+          <li>Mình không được phép thất bại.</li>
         </ul>
+        <p>Chính 4 niềm tin đó khiến mình luôn nghi ngờ bản thân. So sánh với người khác. Không dám chọn điều mình thực sự muốn.</p>
+        <p>Và đây là điều quan trọng nhất: <strong class="highlight">nếu hệ điều hành đó không thay đổi, bạn học thêm bao nhiêu khóa học cũng vậy.</strong> Đổi thêm bao nhiêu công việc cũng vậy. Quyết tâm thêm bao nhiêu lần cũng vậy. Bạn sẽ quay về đúng vòng lặp cũ.</p>
+        <p>Sau khi đồng hành cùng gần 500 học viên, mình thấy điều này lặp lại ở gần như tất cả mọi người: điều khiến họ mắc kẹt chưa bao giờ là thiếu năng lực. Là họ chưa đủ tin vào chính mình để đưa ra một lựa chọn.</p>
       </div>
-      <div class="reason-card">
-        <h3>Chị Phương Oanh</h3>
-        <p class="session-tagline" style="margin: 4px 0 0;">Từ quản lý Đại sứ quán → Kiến tạo sự nghiệp đúng với chính mình</p>
-        <p class="mt-4">Từng có công việc ổn định nhưng luôn trăn trở tìm kiếm một công việc ý nghĩa hơn. Sau hành trình Khai vấn Chuyển hóa:</p>
-        <ul style="margin: 12px 0 0 20px; color: var(--text);">
-          <li>Trở thành Coach Hôn nhân &amp; Gia đình.</li>
-          <li>Xây dựng song song công việc kinh doanh và coaching.</li>
-          <li>Có hướng đi rõ ràng và nguồn thu nhập ổn định.</li>
-        </ul>
+      <div class="mini-case">
+        <div class="mini-case-avatar"><img src="assets/avatar-luongnghia.jpg" alt="Chị Lương Nghĩa"></div>
+        <div class="mini-case-body">
+          <div class="mini-case-name">Chị Lương Nghĩa</div>
+          <div class="mini-case-role">Nhiều năm làm quản lý ngành viễn thông</div>
+          <p>Từng rơi vào những vòng lặp cảm xúc với nhân viên, với con, dù công việc bên ngoài vẫn ổn định. Sau khi nhìn ra hệ điều hành của chính mình, chị không còn phản ứng theo cảm xúc trước áp lực nữa. Chị trở thành người lãnh đạo dùng coaching để đồng hành cùng đội ngũ — thay vì chỉ quản lý công việc.</p>
+        </div>
       </div>
-      <div class="reason-card">
-        <h3>Chị Thanh Hoa</h3>
-        <p class="session-tagline" style="margin: 4px 0 0;">Từ một người dễ phản ứng theo cảm xúc → tìm lại được La Bàn cảm xúc</p>
-        <p class="mt-4">Biết dừng lại để quan sát, lắng nghe chính mình trước khi lựa chọn cách hiện diện với người khác. Kết quả:</p>
-        <ul style="margin: 12px 0 0 20px; color: var(--text);">
-          <li>Bình an và vững vàng hơn trước những biến động của cuộc sống, không còn phản ứng theo cảm xúc nhất thời.</li>
-          <li>Biết quan sát nội tâm, nhận diện cảm xúc và lựa chọn phản hồi thay vì phản ứng.</li>
-          <li>Chuyển hóa từ phán xét sang thấu hiểu, từ kiểm soát sang đồng hành, xây dựng những mối quan hệ sâu sắc và an toàn hơn với gia đình.</li>
-          <li>Đưa Khai vấn Chuyển hóa trở thành một phần trong lối sống hằng ngày, giúp mỗi trải nghiệm đều trở thành cơ hội để trưởng thành và quay về với chính mình.</li>
-        </ul>
+      <div class="mini-case">
+        <div class="mini-case-avatar"><img src="assets/avatar-thanhvan.jpg" alt="Thanh Vân"></div>
+        <div class="mini-case-body">
+          <div class="mini-case-name">Thanh Vân</div>
+          <div class="mini-case-role">Làm ngân hàng, áp lực cao mỗi ngày</div>
+          <p>Vân không tìm cách thay đổi hoàn cảnh bên ngoài. Vân học cách hiểu chính mình trước. Kết quả: không còn mang căng thẳng công việc về nhà, và có một trạng thái bình an làm nền cho mọi quyết định.</p>
+        </div>
+      </div>
+      <div class="story-narrative">
+        <p class="mt-6">Khi bạn nhìn thấy hệ điều hành của mình — thay vì tiếp tục đoán mò từ bên ngoài — bạn mới có thể lựa chọn khác đi.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REFRAME -->
-<section class="section" id="reframe">
-  <div class="container-narrow">
-    <div class="story-narrative">
-      <p class="muted">Đến đây có thể bạn sẽ nghĩ:</p>
-      <p class="pull-quote" style="font-size: 1.55rem; font-weight: 700; background: linear-gradient(135deg, rgba(29,78,137,0.08) 0%, rgba(193,98,46,0.07) 100%); padding: 20px 24px; border-radius: 0 12px 12px 0; box-shadow: 0 10px 28px rgba(29,78,137,0.08);">"Mình phải tìm được đam mê, phải có định hướng thật chắc chắn rồi mới dám thay đổi."</p>
-      <div class="founder-banner"><img src="assets/portrait-guarantee.jpg" alt="Ms. Hà Nguyễn"></div>
-      <p>Mình nghe câu này rất nhiều, nhưng thử cùng mình nhìn lại: Điều gì khiến bạn tin rằng mình phải có câu trả lời hoàn hảo trước khi bắt đầu?</p>
-      <p>Có phải vì bạn sợ... Nếu chọn sai, mình sẽ mất thêm vài năm. Nếu quyết định nghỉ việc là sai, mình sẽ mất tài chính. Nếu chuyển nghề sai, mình sẽ chứng minh rằng mình không đủ giỏi.</p>
-      <p>Nhưng có một sự thật mà rất nhiều người không nhận ra. <strong class="highlight">Không ai tìm thấy con đường của mình bằng cách đứng yên.</strong></p>
-      <p>Sự rõ ràng không xuất hiện trước lựa chọn. Sự rõ ràng được tạo ra từ những lựa chọn, những trải nghiệm và những lần dám bước đi.</p>
-      <p><strong class="highlight">Điều đắt giá nhất không phải là một quyết định chưa hoàn hảo.</strong> Mà là dành thêm nhiều năm để chờ một sự chắc chắn không bao giờ đến.</p>
-      <p>Bởi mỗi năm trôi qua... Bạn không chỉ đánh mất những cơ hội. Bạn còn dần đánh mất niềm tin rằng mình có thể kiến tạo một cuộc đời khác.</p>
-      <p>La Bàn Nội Tâm không giúp bạn quyết định thay mình nên làm gì. Chương trình giúp bạn tìm lại chiếc La Bàn Nội Tâm để đủ rõ mình là ai, điều gì thật sự quan trọng và đủ tin vào chính mình để đưa ra những lựa chọn tiếp theo.</p>
-      <p class="muted">Bởi khi bạn đủ rõ ở bên trong... Con đường sẽ không còn là thứ phải đi tìm. Nó sẽ được kiến tạo từ chính những lựa chọn của bạn.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FUTURE PACING -->
-<section class="section section-alt" id="future-pacing">
-  <div class="container-narrow">
-    <h2 class="text-warm h2-oneline">Hãy hình dung về chính mình trong một năm tới...</h2>
-    <div class="audience-list mt-8">
-      <div class="audience-item">Bạn đã tìm thấy một hướng đi trong công việc thật sự phù hợp với con người mình, sau nhiều năm loay hoay tìm kiếm.</div>
-      <div class="audience-item">Bạn biết rõ điều mình cần làm trong 90 ngày tiếp theo, thay vì cứ mãi phân vân giữa quá nhiều lựa chọn.</div>
-      <div class="audience-item">Từng bước xây dựng một công việc mang lại nguồn thu nhập bền vững với mục tiêu <span class="highlight">30–50 triệu đồng mỗi tháng</span>, đồng thời kiến tạo một hệ thống để công việc và cuộc sống có thể cùng phát triển lâu dài.</div>
-      <div class="audience-item">Bạn không còn phải đi tìm thêm một lời khuyên ở bên ngoài vì bạn đã học được cách lắng nghe chính mình, và đủ tin tưởng vào những lựa chọn của bản thân.</div>
-      <div class="audience-item">Mỗi sáng thức dậy, bạn biết hôm nay mình cần làm gì để tiến gần hơn đến cuộc sống mà mình mong muốn.</div>
-      <div class="audience-item">Quan trọng hơn cả, bạn có quyền lựa chọn cách mình sắp xếp cuộc sống. Có thêm thời gian cho chính mình.</div>
-      <div class="audience-item">Có mặt trọn vẹn trong những khoảnh khắc ý nghĩa bên gia đình, con cái và bố mẹ.</div>
-      <div class="audience-item">Và mỗi sáng thức dậy, bạn cảm thấy bình an vì biết mình đang đi trên con đường của riêng mình.</div>
-    </div>
-    <p class="mt-12 text-center" style="font-family: var(--font-h); font-size: 1.2rem; font-weight: 600; color: var(--accent); max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.6;">Chỉ trong 3 ngày, chương trình La Bàn Nội Tâm giúp bạn kiến tạo một nền tảng mới để đưa ra những lựa chọn quan trọng của cuộc đời. Khi bạn tìm lại được La Bàn Nội Tâm, mọi quyết định sẽ trở nên rõ ràng và nhẹ nhàng hơn.</p>
-    <div class="audience-list mt-8">
-      <div class="audience-item">Nhìn thấy gốc rễ của sự mơ hồ, thay vì tiếp tục nghĩ rằng mình chỉ thiếu động lực hay chưa đủ giỏi.</div>
-      <div class="audience-item">Nhận diện hệ điều hành ẩn đang âm thầm dẫn dắt mọi lựa chọn trong công việc và cuộc sống.</div>
-      <div class="audience-item">Lấy lại niềm tin vào chính mình, thay vì tiếp tục phụ thuộc vào lời khuyên, trắc nghiệm hay định hướng từ người khác.</div>
-      <div class="audience-item">Ra quyết định từ giá trị cốt lõi của bản thân, thay vì từ nỗi sợ, sự so sánh hay kỳ vọng của người khác.</div>
-      <div class="audience-item">Thiết kế lộ trình 90 ngày rõ ràng, biết chính xác bước đầu tiên cần làm để bắt đầu kiến tạo chương mới của cuộc đời.</div>
-    </div>
-    <p class="mt-8 pull-quote">Không chỉ thay đổi một quyết định. Bạn thay đổi cách mình lựa chọn cho cả cuộc đời phía trước.</p>
-  </div>
-</section>
-
-<!-- OBJECTION HANDLING -->
-<section class="section" id="objection">
-  <div class="container-narrow">
-    <div class="story-narrative">
-      <p class="pull-quote">"Nghe hay quá, nhưng nếu sau chương trình này mình vẫn không thay đổi thì sao?"</p>
-      <p>Mình rất hiểu câu hỏi này. Và thật lòng... Đây cũng là điều rất nhiều học viên đã từng chia sẻ với mình trước khi họ đăng ký.</p>
-      <p>Bởi phần lớn họ không đến với La Bàn Nội Tâm từ khóa học đầu tiên về phát triển bản thân. Họ đã từng đọc rất nhiều sách. Đã thử thay đổi công việc. Đã từng rất quyết tâm...</p>
-      <p>Rồi sau một thời gian, mọi thứ lại quay về như cũ. Thế là họ bắt đầu kết luận: "Có lẽ vấn đề là ở mình."</p>
-      <p>Nhưng đây là điều mình muốn bạn nhìn thấy. La Bàn Nội Tâm không được tạo ra để giúp bạn cố gắng nhiều hơn.</p>
-      <p>Bởi điều khiến bạn mắc kẹt chưa bao giờ là thiếu kiến thức hay thiếu quyết tâm. <strong class="highlight">Điều giữ bạn lại là những niềm tin, mô thức và nỗi sợ đang âm thầm dẫn dắt mọi lựa chọn của bạn mỗi ngày.</strong></p>
-      <p>Nếu "hệ điều hành" đó không thay đổi... Bạn có học thêm bao nhiêu khóa học... Đổi thêm bao nhiêu công việc... Hay quyết tâm thêm bao nhiêu lần... Bạn vẫn sẽ quay về đúng vòng lặp cũ.</p>
-      <p>Đó là lý do La Bàn Nội Tâm không bắt đầu bằng việc đưa cho bạn một hướng đi. Chúng mình bắt đầu bằng việc giúp bạn nhìn thấy điều gì đang thật sự vận hành bên trong mình.</p>
-      <p class="muted">Bởi khi nhìn thấy... Bạn mới có thể lựa chọn khác đi.</p>
-      <p>Mình cũng không muốn hứa với bạn rằng: Chỉ sau 3 ngày, cuộc đời bạn sẽ thay đổi hoàn toàn. Không một chương trình có trách nhiệm nào có thể hứa điều đó.</p>
-      <p>Điều La Bàn Nội Tâm mang lại là một điều thực tế hơn. Bạn sẽ có một chiếc La Bàn Nội Tâm đủ rõ để biết:</p>
-      <ul style="margin: 0 0 20px 20px; color: var(--text);">
-        <li>Vì sao mình đang mắc kẹt.</li>
-        <li>Điều gì thực sự quan trọng với mình.</li>
-        <li>Đâu là bước đi phù hợp nhất tiếp theo.</li>
-      </ul>
-      <p>Và quan trọng nhất... Bạn sẽ không còn tiếp tục đi tìm câu trả lời ở bên ngoài. Bạn sẽ biết cách quay về lắng nghe chính mình trước mỗi ngã rẽ của cuộc đời.</p>
-      <p>Đó không phải là sự thay đổi trong 3 ngày. Đó là một năng lực bạn có thể mang theo suốt nhiều năm sau này.</p>
-      <p class="muted">Nếu bạn thực sự mong muốn có được năng lực này, thì mình rất vui vì bạn đã có mặt ở đây.</p>
-      <p>Trong vài phút tới, mình sẽ chia sẻ với bạn một phương pháp đã giúp chính mình và nhiều học viên tìm ra được con đường công việc rõ ràng, để từ đó đưa ra những quyết định đúng với chính mình thay vì tiếp tục sống trong sự mơ hồ và do dự.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAM STRUCTURE -->
-<section class="section section-alt" id="program">
+<!-- VÒNG LẶP 2 -->
+<section class="section" id="vong-lap-2">
   <div class="container">
-    <span class="eyebrow">La Bàn Nội Tâm</span>
-    <h2 class="text-accent">Hệ điều hành giúp bạn thay đổi cách đưa ra những lựa chọn quan trọng của cuộc đời</h2>
-    <p class="mt-4" style="max-width: 720px;">Đây không phải là một chương trình truyền cảm hứng. Cũng không phải một chương trình định hướng nghề nghiệp nói cho bạn biết nên chọn công việc nào hay phải sống ra sao.</p>
-    <p class="mt-4" style="max-width: 720px;">La Bàn Nội Tâm được xây dựng từ một niềm tin rất khác: <strong class="highlight">Mọi kết quả trong cuộc sống đều bắt đầu từ những lựa chọn.</strong> Và mọi lựa chọn đều được dẫn dắt bởi một "hệ điều hành" bên trong mỗi con người.</p>
-    <p class="mt-4" style="max-width: 720px;">Đó là <strong class="highlight">cơ chế chuyển hóa thực tại</strong> cốt lõi đã được kiểm chứng qua 8 năm thực nghiệm trên <strong class="highlight">nền tảng khai vấn chuyển hóa</strong> chuyên sâu.</p>
-    <h3 class="mt-12">Chương trình La Bàn Nội Tâm diễn ra như thế nào?</h3>
-    <p class="mt-4" style="max-width: 720px;">La Bàn Nội Tâm được thiết kế dưới dạng <strong class="highlight">Master Class trải nghiệm 3 ngày</strong>, kết hợp giữa chia sẻ, coaching, thực hành và tự soi chiếu trên <strong class="highlight">nền tảng khai vấn chuyển hóa</strong>.</p>
-    <p class="mt-4" style="max-width: 720px;">Bạn sẽ không chỉ ngồi nghe lý thuyết. Bạn sẽ từng bước nhìn lại chính mình, nhận diện những điều đang vận hành bên trong và tạo ra một hướng đi rõ ràng cho giai đoạn tiếp theo của cuộc đời.</p>
-    <p class="mt-6"><strong>Trong 3 ngày, bạn sẽ nhận được:</strong></p>
-    <div class="stack mt-8">
-      <div class="session">
-        <div class="session-buoi">01</div>
-        <h3>3 buổi Master Class trực tiếp (2,5 giờ/buổi)</h3>
-        <p class="session-subtitle">Mỗi buổi đều được thiết kế theo một tiến trình rõ ràng:</p>
-        <ul>
-          <li>Hiểu cơ chế vận hành của tâm trí và những mô thức đang dẫn dắt cuộc sống.</li>
-          <li>Thực hành các bài tập tự soi chiếu để nhìn rõ chính mình.</li>
-          <li>Trải nghiệm khai vấn và những câu hỏi mở giúp bạn mở ra góc nhìn mới.</li>
-          <li>Xây dựng bản đồ nội tâm và kế hoạch hành động phù hợp với chính mình.</li>
-        </ul>
+    <span class="eyebrow">Vòng lặp 2</span>
+    <h2 class="text-accent">"Chương trình này khác gì những khóa học mình từng học?"</h2>
+    <div class="container-narrow" style="padding: 0; margin-top: 24px;">
+      <div class="story-narrative">
+        <p>Câu hỏi công bằng. Vì có thể bạn đã học rất nhiều rồi.</p>
+        <p>La Bàn Nội Tâm không phải một chương trình định hướng nghề nghiệp. Không ai ở đây nói cho bạn biết nên chọn công việc gì.</p>
+        <p>Đây là một tiến trình để bạn tự nhìn ra hệ điều hành của chính mình — trên nền tảng Khai vấn Chuyển hóa đã được kiểm chứng qua 8 năm thực nghiệm.</p>
+        <p><strong>3 buổi tối, 3 bước:</strong></p>
       </div>
-      <div class="session">
-        <div class="session-buoi">02</div>
-        <h3>Workbook thực hành</h3>
-        <p class="session-subtitle">Mỗi bài học đều đi kèm Workbook giúp bạn ghi lại hành trình nhận thức, thay vì chỉ nghe rồi quên.</p>
-        <p class="mt-2" style="color: var(--text-muted); font-size: 0.95rem;">Đến cuối chương trình, bạn sẽ có một bản đồ rõ ràng về:</p>
-        <ul>
-          <li>Điều gì đang khiến mình mắc kẹt.</li>
-          <li>Điều gì thực sự quan trọng.</li>
-          <li>Đâu là hướng đi mình muốn kiến tạo trong giai đoạn tiếp theo.</li>
-        </ul>
+      <div class="buoi-recap">
+        <p><strong class="highlight">Buổi 1 — Giải mã hệ điều hành.</strong> Bạn dùng công cụ Life Audit để kiểm kê toàn bộ hành trình cuộc đời. Dùng Belief Mapping để gọi tên chính xác niềm tin đang khiến bạn lặp lại cùng một vòng lặp lựa chọn.</p>
       </div>
-      <div class="session">
-        <div class="session-buoi">03</div>
-        <h3>Không gian coaching và chia sẻ</h3>
-        <p class="mt-2" style="color: var(--text-muted); font-size: 0.95rem;">Bạn sẽ có cơ hội lắng nghe những câu chuyện rất giống mình. Được đặt câu hỏi. Được soi chiếu. Được mở rộng góc nhìn từ những phiên coaching trực tiếp.</p>
-        <p class="result">➜ Bởi rất nhiều nhận thức sâu sắc không đến từ việc nghe thêm kiến thức, mà đến từ việc nhìn thấy chính mình trong câu chuyện của người khác.</p>
+      <div class="buoi-recap">
+        <p><strong class="highlight">Buổi 2 — Kích hoạt la bàn.</strong> Bạn xác định 3-5 giá trị cốt lõi sẽ trở thành kim chỉ nam cho mọi quyết định. Dùng Big Dream Identity để làm rõ phiên bản tương lai bạn thực sự muốn trở thành.</p>
       </div>
-      <div class="session">
-        <div class="session-buoi">04</div>
-        <h3>Kế hoạch hành động 90 ngày</h3>
-        <p class="mt-2" style="color: var(--text-muted); font-size: 0.95rem;">Chương trình không kết thúc ở nhận thức. Bạn sẽ hoàn thành một kế hoạch hành động 90 ngày với những bước đi cụ thể để bắt đầu kiến tạo chương mới của cuộc đời, thay vì quay trở lại vòng lặp cũ sau khi workshop kết thúc.</p>
+      <div class="buoi-recap">
+        <p><strong class="highlight">Buổi 3 — Thiết kế nhân dạng.</strong> Bạn thiết kế nhân dạng mới mình chọn sống từ hôm nay. Hoàn thiện lộ trình 90 ngày với bước đi đầu tiên cụ thể. Thiết lập Weekly Commitment để nhận thức không dừng lại ở nhận thức.</p>
       </div>
     </div>
-    <div class="mt-12 text-center"><a href="dang-ky.html" class="btn-primary" style="font-size:1.1rem;">GIỮ CHỖ CỦA TÔI NGAY</a></div>
-  </div>
-</section>
 
-<!-- CURRICULUM -->
-<section class="section" id="curriculum">
-  <div class="container">
-    <span class="eyebrow">Lộ trình 3 buổi</span>
-    <h2 class="text-accent">Hành trình 3 ngày tìm lại "La Bàn Nội Tâm"</h2>
-    <p class="mt-4" style="font-family: var(--font-h); font-size: 1.15rem; font-weight: 600; color: var(--accent-deep); text-shadow: 2px 2px 0 rgba(193,98,46,0.18), 4px 4px 8px rgba(15,37,64,0.15);">Dựa trên nền tảng Khai vấn chuyển hóa chuyên sâu.</p>
-    <p class="mt-2" style="font-family: var(--font-h); font-size: 1.05rem; font-weight: 600; color: var(--accent-deep); text-shadow: 2px 2px 0 rgba(193,98,46,0.18), 4px 4px 8px rgba(15,37,64,0.15);"><strong>20:00 | Ngày 19 – 21/08/2026 · Online qua Zoom</strong> — Coach Hà đồng hành trực tiếp, Q&amp;A.</p>
+    <!-- Chi tiết lộ trình 3 buổi -->
     <div class="stack mt-12">
       <div class="session">
         <div class="session-buoi">Buổi 1</div>
@@ -626,130 +468,90 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- QUALIFYING CHECKLIST -->
-<section class="section section-alt" id="qualifying">
-  <div class="container-narrow">
-    <h2 class="text-warm">Master Class này dành cho ai</h2>
-    <div class="audience-list mt-8">
-      <div class="audience-item">Bạn đang ở một ngã rẽ của cuộc đời: phân vân giữa ở lại hay nghỉ việc, chuyển nghề, khởi nghiệp hoặc bắt đầu một hành trình mới nhưng chưa biết đâu là lựa chọn phù hợp.</div>
-      <div class="audience-item">Bạn đã thử rất nhiều cách để tìm hướng đi: đọc sách, học khóa học, làm trắc nghiệm, xin lời khuyên... nhưng vẫn chưa có câu trả lời khiến mình thật sự thông suốt ở bên trong.</div>
-      <div class="audience-item">Bên ngoài cuộc sống vẫn ổn, nhưng bên trong luôn có cảm giác mơ hồ, trống rỗng hoặc mất kết nối với chính mình.</div>
-      <div class="audience-item">Bạn liên tục thay đổi mục tiêu hoặc công việc, nhưng cảm giác bế tắc và hoài nghi bản thân vẫn quay trở lại.</div>
-      <div class="audience-item">Bạn muốn tìm một công việc không chỉ tạo ra thu nhập, mà còn đúng với giá trị, điểm mạnh và điều mình thực sự khao khát cống hiến.</div>
-      <div class="audience-item">Bạn mong muốn có một lộ trình rõ ràng để đưa ra quyết định và kiến tạo sự nghiệp, thay vì tiếp tục sống trong trạng thái chờ đợi hoặc thử – sai.</div>
+    <div class="container-narrow" style="padding: 0; margin-top: 40px;">
+      <div class="mini-case">
+        <div class="mini-case-avatar"><img src="assets/avatar-dieu.jpg" alt="Coach Huyền Diệu"></div>
+        <div class="mini-case-body">
+          <div class="mini-case-name">Coach Huyền Diệu</div>
+          <div class="mini-case-role">Từng học ở nhiều cộng đồng phát triển bản thân lớn</div>
+          <p>Làm qua nhiều ngành — y tế, giáo dục, viết sách, đào tạo — nhưng vẫn chưa tìm ra một con đường sự nghiệp thực sự thuộc về mình. Sau hành trình này, Diệu trở thành coach toàn thời gian, xây dựng ngách riêng cho phụ nữ sau đổ vỡ, và tạo ra gói đồng hành trị giá <span class="highlight">6.000 USD</span>.</p>
+        </div>
+      </div>
+      <div class="mini-case">
+        <div class="mini-case-avatar"><img src="assets/avatar-oanh.jpg" alt="Chị Phương Oanh"></div>
+        <div class="mini-case-body">
+          <div class="mini-case-name">Chị Phương Oanh</div>
+          <div class="mini-case-role">Từng là quản lý Đại sứ quán</div>
+          <p>Công việc ổn định, nhiều người mơ ước. Nhưng điều khó nhất với chị không phải là nghỉ việc. Mà là không biết mình sẽ đi về đâu nếu nghỉ. Giờ chị vừa là Coach Hôn nhân &amp; Gia đình, vừa xây dựng công việc kinh doanh riêng — với một hướng đi rõ ràng, không còn loay hoay.</p>
+        </div>
+      </div>
+      <div class="story-narrative">
+        <p class="pull-quote">Bạn không rời chương trình với một cái tên nghề nghiệp. Bạn rời chương trình với một bản đồ — và biết chính xác bước đầu tiên.</p>
+        <p class="text-center mt-8"><strong>Và còn rất nhiều người đã có được kết quả cho mình:</strong></p>
+      </div>
     </div>
-    <h3 class="mt-16">Chưa phù hợp nếu bạn...</h3>
-    <div class="audience-list mt-8">
-      <div class="audience-item no">Bạn đang tìm một người nói sẵn đáp án hoặc quyết định thay mình nên làm công việc gì.</div>
-      <div class="audience-item no">Bạn chưa sẵn sàng nhìn lại chính mình, đối diện với những niềm tin và mô thức đang ảnh hưởng đến các lựa chọn trong cuộc sống.</div>
-      <div class="audience-item no">Bạn kỳ vọng chỉ cần tham gia master class là sẽ có ngay câu trả lời, mà không cần dành thời gian suy ngẫm, trải nghiệm và thực hành.</div>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF -->
-<section class="section" id="testimonial">
-  <div class="container">
-    <h2 class="text-warm">Hành trình chuyển hóa của học viên</h2>
     <div class="wide-banner mt-8"><img src="assets/portrait-community.jpg" alt="Cộng đồng học viên MCoach"></div>
-    <div class="stack mt-12">
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <div class="testimonial-avatar"><img src="assets/avatar-dieu.jpg" alt="Coach Huyền Diệu"></div>
-        <div class="testimonial-name">Coach Huyền Diệu</div>
-        <div class="testimonial-role">Từ nhiều năm đi tìm chính mình đến kiến tạo một sự nghiệp từ sự đủ đầy bên trong</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Diệu là một người luôn khao khát phát triển bản thân, và đi sâu vào thế giới nội tâm. Bạn đã học tập trong nhiều cộng đồng lớn như BKE, Seroto…, trải qua nhiều công việc trong lĩnh vực y tế, giáo dục, viết sách và đào tạo. Nhưng suốt nhiều năm, Diệu vẫn chưa tìm thấy một con đường sự nghiệp thực sự thuộc về mình.</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Sau khi đồng hành cùng Khai vấn Chuyển hóa, Diệu tìm lại được La Bàn Nội Tâm và đủ rõ ràng để xây dựng sự nghiệp phản ánh đúng giá trị của mình.</p>
-        <ul>
-          <li>Trở thành Coach toàn thời gian sau nhiều năm loay hoay tìm hướng đi.</li>
-          <li>Xây dựng ngách coaching dành cho phụ nữ sau đổ vỡ, đồng hành cùng họ kiến tạo lại cuộc sống và sự nghiệp từ sự đủ đầy bên trong.</li>
-          <li>Thiết kế các chương trình coaching chuyên sâu và đạt dấu mốc với gói đồng hành giá trị lên tới <span class="highlight">6.000 USD</span>.</li>
-          <li>Có nguồn thu nhập ổn định từ nghề coaching và xây dựng thương hiệu cá nhân đúng với con người mình.</li>
-        </ul>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px; font-style: italic;">Điều thay đổi lớn nhất không chỉ là công việc hay thu nhập. Mà là Diệu không còn đi tìm con đường của mình nữa. Bạn đã đủ rõ ràng để mỗi lựa chọn trong sự nghiệp đều xuất phát từ chính giá trị và bản sắc của mình.</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <div class="testimonial-avatar"><img src="assets/avatar-oanh.jpg" alt="Coach Phương Oanh"></div>
-        <div class="testimonial-name">Coach Phương Oanh</div>
-        <div class="testimonial-role">Từng làm ở Đại sứ quán đến kiến tạo một sự nghiệp đúng với chính mình</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Chị Oanh từng là quản lý trong một Đại sứ quán với công việc ổn định và nhiều người mơ ước. Nhưng sau những biến cố về sức khỏe của bản thân và gia đình, chị bắt đầu đặt ra một câu hỏi: "Nếu cứ tiếp tục như thế này, đây có thật sự là cuộc đời mình mong muốn?"</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Dù có một công việc an toàn, chị vẫn luôn khao khát tìm kiếm một công việc ý nghĩa hơn. Nhưng cũng giống rất nhiều người... Điều khó nhất không phải là nghỉ việc. Mà là không biết mình sẽ đi về đâu.</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;"><strong style="color: var(--text);">Bước ngoặt:</strong> Đến với Khai vấn Chuyển hóa, chị không chỉ tìm thấy một nghề mới. Chị tìm lại được chiếc La Bàn Nội Tâm của chính mình. Chị đủ rõ điều gì thực sự quan trọng. Đủ tin vào những lựa chọn của mình. Và đủ can đảm để bắt đầu một chương mới.</p>
-        <ul>
-          <li>Trở thành Coach trong ngách Hôn nhân &amp; Gia đình.</li>
-          <li>Đồng thời xây dựng công việc kinh doanh bánh mì như một phần của cuộc sống mình lựa chọn.</li>
-          <li>Kiến tạo <span class="highlight">nguồn thu nhập ổn định</span> từ cả kinh doanh và coaching.</li>
-          <li>Sống với một hướng đi rõ ràng, thay vì tiếp tục loay hoay giữa những lựa chọn.</li>
-        </ul>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <div class="testimonial-avatar"><img src="assets/avatar-lisa.jpg" alt="Coach Hoa Lisa"></div>
-        <div class="testimonial-name">Coach Hoa Lisa</div>
-        <div class="testimonial-role">Đi qua ngã rẽ hôn nhân → Kiến tạo một cuộc đời từ sự đủ đầy</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Sau ngã rẽ hôn nhân, Hoa Lisa từng đánh mất niềm tin vào chính mình và vào tình yêu. Hoa đã dành nhiều năm đi tìm câu trả lời cho những tổn thương bên trong. Thiền tập. Thực hành Trí tuệ cảm xúc. Nhiều phương pháp chữa lành khác nhau. Mỗi phương pháp đều giúp Hoa tiến thêm một bước. Nhưng vẫn còn một khoảng trống chưa được lấp đầy.</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;"><strong style="color: var(--text);">Bước ngoặt:</strong> Đến với Khai vấn, Hoa không chỉ chữa lành những tổn thương của quá khứ. Hoa tìm lại được chiếc La Bàn Nội Tâm của chính mình.</p>
-        <ul>
-          <li>Tìm lại sự bình an và niềm tin vào chính mình.</li>
-          <li>Mở lòng để đón nhận <span class="highlight">một tình yêu trọn vẹn</span>.</li>
-          <li>Thực hiện ước mơ chu du nhiều nơi trên thế giới cùng người bạn đời mới.</li>
-          <li>Xây dựng một cuộc sống được dẫn dắt bởi sự đủ đầy thay vì những tổn thương trong quá khứ.</li>
-        </ul>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <div class="testimonial-avatar"><img src="assets/avatar-thanhvan.jpg" alt="Thanh Vân"></div>
-        <div class="testimonial-name">Thanh Vân</div>
-        <div class="testimonial-role">Từ những ngày sống trong áp lực môi trường công sở → Tìm lại sự bình an từ bên trong</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Thanh Vân làm việc trong môi trường ngân hàng với cường độ và áp lực rất cao. Mỗi ngày là áp lực hoàn thành công việc. Áp lực chu toàn cho gia đình. Bề ngoài, Vân vẫn hoàn thành mọi vai trò. Nhưng bên trong lại thường xuyên căng thẳng, dễ phản ứng theo cảm xúc và nhiều lúc không hiểu vì sao những điều rất nhỏ cũng khiến mình kiệt sức.</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Sau khi đồng hành cùng Khai vấn Chuyển hóa, Vân không tìm cách thay đổi hoàn cảnh. Mà học cách hiểu chính mình trước. Hiểu những cảm xúc đang diễn ra. Hiểu những nhu cầu chưa được lắng nghe. Hiểu "hệ điều hành nội tâm" đã âm thầm dẫn dắt cách mình suy nghĩ, phản ứng và đưa ra lựa chọn.</p>
-        <ul>
-          <li>Bình tĩnh hơn trước những áp lực trong công việc thay vì dễ bị cuốn theo cảm xúc.</li>
-          <li>Biết dừng lại để quan sát và lựa chọn cách phản hồi thay vì phản ứng theo thói quen.</li>
-          <li>Không còn mang theo sự căng thẳng ở nơi làm việc về với gia đình.</li>
-          <li>Xây dựng được một không khí lắng nghe, tôn trọng và thấu hiểu hơn trong các mối quan hệ với chồng và con.</li>
-          <li>Không còn cố gắng kiểm soát mọi thứ hay trách móc bản thân khi cuộc sống không như ý.</li>
-          <li>Có một trạng thái <span class="highlight">bình an từ bên trong</span> để làm việc, sống và đồng hành cùng những người mình yêu thương.</li>
-        </ul>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px; font-style: italic;">Và chính sự bình an ấy đã trở thành nền tảng để Vân làm việc hiệu quả hơn, sống nhẹ nhàng hơn và xây dựng một gia đình nhiều kết nối hơn.</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote-mark">"</div>
-        <div class="testimonial-avatar"><img src="assets/avatar-luongnghia.jpg" alt="Chị Lương Nghĩa"></div>
-        <div class="testimonial-name">Chị Lương Nghĩa</div>
-        <div class="testimonial-role">Nhiều năm làm quản lý ngành viễn thông → Lãnh đạo bằng sự thấu hiểu</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Chị Lương Nghĩa có nhiều năm làm quản lý trong ngành viễn thông. Đến một giai đoạn của sự nghiệp và cuộc sống, chị bắt đầu khao khát tìm lại chính mình sau những ngã rẽ đã đi qua của cuộc đời. Nhìn từ bên ngoài, chị có một công việc vẫn ổn định. Nhưng bên trong, chị thường xuyên rơi vào những vòng lặp cảm xúc với nhân viên, với con và cảm thấy cuộc sống thiếu đi sự cân bằng.</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;"><strong style="color: var(--text);">Bước ngoặt:</strong> Chị đến với Khai vấn Chuyển hóa. Thay vì tìm cách kiểm soát mọi thứ bên ngoài, chị bắt đầu học cách quan sát và thấu hiểu chính mình. Hiểu những cảm xúc, chấp nhận những điều bất như ý và thay đổi cách mình hiện diện trong từng mối quan hệ. Đồng thời, chị bắt đầu ứng dụng coaching vào chính công việc quản lý của mình.</p>
-        <ul>
-          <li>Tìm lại trạng thái cân bằng và bình an từ bên trong.</li>
-          <li>Không còn phản ứng theo cảm xúc trước những tình huống áp lực với nhân viên hay gia đình.</li>
-          <li>Trở thành người lãnh đạo ứng dụng coaching để phát triển và đồng hành cùng đội ngũ thay vì chỉ quản lý công việc.</li>
-          <li>Xây dựng môi trường làm việc gắn kết, nơi nhân viên được lắng nghe và phát huy năng lực.</li>
-          <li>Trực tiếp tổ chức các chương trình Group Coaching cho đội ngũ trên cả ba miền Bắc – Trung – Nam, lan tỏa văn hóa coaching trong doanh nghiệp.</li>
-        </ul>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px; font-style: italic;">Chị Nghĩa nhận ra rằng: một người lãnh đạo tạo ra sự thay đổi không phải bằng việc kiểm soát nhiều hơn. Mà bằng việc hiểu chính mình, hiện diện trọn vẹn và biết cách khơi mở tiềm năng của người khác. Đó cũng là lúc công việc không còn chỉ là quản lý con người, mà trở thành hành trình phát triển con người.</p>
-      </div>
+  </div>
+</section>
+
+<!-- VÒNG LẶP 3 -->
+<section class="section section-alt" id="vong-lap-3">
+  <div class="container-narrow">
+    <span class="eyebrow">Vòng lặp 3</span>
+    <h2 class="text-lavender">"Nếu tham gia rồi mà mình vẫn không thay đổi thì sao?"</h2>
+    <div class="story-narrative mt-8">
+      <p>Rất nhiều học viên đã hỏi mình câu này trước khi đăng ký.</p>
+      <p>Và thật lòng — mình hiểu tại sao. Có thể bạn đã từng rất quyết tâm với một khóa học khác. Rồi sau một thời gian, mọi thứ quay về như cũ. Bạn bắt đầu nghĩ: "Có lẽ vấn đề là ở mình."</p>
+      <p class="pull-quote">Không phải vậy. Vấn đề không phải là bạn thiếu quyết tâm.</p>
+      <p>Vấn đề là những chương trình đó cho bạn thêm kiến thức — mà không giúp bạn nhìn thấy hệ điều hành đang giữ bạn lại.</p>
+      <p><strong class="highlight">La Bàn Nội Tâm không được tạo ra để bạn cố gắng nhiều hơn. Nó được tạo ra để bạn nhìn thấy trước khi cố gắng.</strong></p>
+      <p>Bạn không cần từng học Coaching. Không cần đã có sẵn định hướng. Không cần chắc chắn về bất cứ điều gì trước khi tham gia — bạn chỉ cần sẵn sàng nhìn lại chính mình trong 3 buổi tối.</p>
+      <p>Và nếu tham gia đầy đủ cả 3 ngày mà bạn thấy không có giá trị, chỉ cần nhắn cho đội ngũ MCoach — hoàn tiền 100%, không cần giải thích lý do. Chương trình được xây từ gần 10 năm hành trình của chính mình cộng 8 năm đồng hành cùng hàng trăm học viên khác. Nên mình dám cam kết điều đó.</p>
     </div>
-    <h3 class="mt-16 text-center">Và còn rất nhiều hành trình chuyển hóa khác...</h3>
     <div class="testi-gallery mt-8">
-      <img src="assets/testi-1.jpg" alt="Chia sẻ của học viên MCoach">
-      <img src="assets/testi-2.jpg" alt="Chia sẻ của học viên MCoach">
-      <img src="assets/testi-3.jpg" alt="Chia sẻ của học viên MCoach">
-      <img src="assets/testi-4.jpg" alt="Chia sẻ của học viên MCoach">
-      <img src="assets/testi-5.jpg" alt="Chia sẻ của học viên MCoach">
+      <div class="testi-frame"><img src="assets/testi-5.jpg" alt="Chia sẻ của Thanh Tâm, học viên MCoach"></div>
+      <div class="testi-frame"><img src="assets/testi-4.jpg" alt="Chia sẻ của Nguyễn Thanh, học viên MCoach"></div>
+      <div class="testi-frame"><img src="assets/testi-2.jpg" alt="Chia sẻ của Lê Huyền Trang, học viên MCoach"></div>
+      <div class="testi-frame"><img src="assets/testi-1.jpg" alt="Chia sẻ của Hoàng Diệp, học viên MCoach"></div>
+    </div>
+    <div class="audience-list mt-8">
+      <div class="audience-item"><strong>Chương trình phù hợp với bạn nếu:</strong> Bạn đang ở một ngã rẽ — phân vân ở lại hay nghỉ việc, chuyển nghề hay khởi nghiệp — và đã thử nhiều cách nhưng chưa có câu trả lời khiến mình thông suốt.</div>
+      <div class="audience-item no"><strong>Chưa phù hợp nếu:</strong> Bạn đang tìm một người quyết định thay mình nên làm nghề gì. Hoặc bạn chưa sẵn sàng nhìn lại chính mình.</div>
     </div>
   </div>
 </section>
 
-<!-- OFFER STACK -->
-<section class="section section-alt" id="offer">
+<!-- OFFER -->
+<section class="section" id="offer">
   <div class="container-narrow">
-    <p class="text-center" style="font-family: var(--font-art); font-style: italic; font-weight: 700; font-size: clamp(1.4rem, 3.2vw, 2rem); color: var(--accent); margin-bottom: 28px;">Đừng để sự mơ hồ tiếp tục dẫn lối cuộc đời bạn.</p>
-    <div class="offer-box">
+    <h2 class="text-warm">Đây là những gì bạn nhận được</h2>
+    <div class="story-narrative mt-8">
+      <p>La Bàn Nội Tâm không phải một khóa học lý thuyết. Đây là 3 buổi Master Class trực tiếp — kết hợp chia sẻ, coaching, thực hành và tự soi chiếu — được thiết kế để bạn rời khỏi mỗi buổi với một mảnh ghép cụ thể của bản đồ nội tâm mình.</p>
+      <p>Mình không đưa cho bạn một danh sách nghề nghiệp để chọn. Mình đưa cho bạn công cụ để bạn tự biết mình cần chọn gì — và đó là sự khác biệt duy nhất mà không một bài trắc nghiệm tính cách nào làm được.</p>
+      <p><strong>Trong 3 buổi tới, bạn sẽ có:</strong></p>
+    </div>
+    <div class="buoi-recap">
+      <p>Buổi tối đầu tiên, bạn dùng <strong class="highlight">Life Audit</strong> để nhìn lại toàn bộ hành trình đã định hình con người bạn hôm nay — và <strong class="highlight">Belief Mapping</strong> để gọi tên chính xác niềm tin đang giữ bạn trong vòng lặp cũ.</p>
+    </div>
+    <div class="buoi-recap">
+      <p>Buổi tối thứ hai, bạn xác định 3-5 giá trị cốt lõi sẽ dẫn đường cho mọi quyết định sau này — và dùng <strong class="highlight">Big Dream Identity</strong> để nhìn rõ phiên bản bạn thực sự muốn trở thành.</p>
+    </div>
+    <div class="buoi-recap">
+      <p>Buổi tối thứ ba, bạn thiết kế nhân dạng mới mình chọn sống từ hôm nay — và hoàn thiện lộ trình 90 ngày với bước đi đầu tiên rõ ràng, không mơ hồ.</p>
+    </div>
+
+    <h3 class="mt-12">Bạn không đi một mình</h3>
+    <div class="story-narrative mt-4">
+      <p>Suốt 8 năm qua, mình đã đồng hành cùng gần 500 học viên và khách hàng qua đúng tiến trình này — từ những phiên coaching cá nhân đầu tiên, đến những chương trình đồng hành chuyên sâu trị giá vài trăm triệu đồng.</p>
+    </div>
+    <div class="photo-grid-4">
+      <img src="assets/hoc-vien-zoom-1.png" alt="Buổi coaching nhóm cùng học viên MCoach">
+      <img src="assets/hoc-vien-zoom-2.png" alt="Cộng đồng học viên MCoach trên Zoom">
+    </div>
+
+    <p class="mt-8 text-center"><strong>Kèm theo 3 buổi Master Class, bạn còn nhận được:</strong></p>
+    <div class="offer-box mt-8">
       <span class="badge">Đăng ký tham gia bạn sẽ nhận được bộ công cụ La bàn nội tâm</span>
       <ul class="offer-list mt-8">
         <li><span><strong>Quà tặng 1 —</strong> 03 Buổi Master Class Trực Tiếp Live Zoom cùng Ms. Hà Nguyễn</span><span class="value">2.000.000 VNĐ</span></li>
@@ -763,75 +565,40 @@ footer { padding: 32px 0; background: var(--surface-2); border-top: 1px solid va
         <span class="strike">Tổng giá trị quy đổi: 4.696.000đ</span>
         <span class="main">199.000đ</span>
       </div>
-      <p style="color: rgba(255,255,255,0.88);">Mức đầu tư thực tế hôm nay — cam kết <span class="highlight">hoàn tiền 100%</span> sau Buổi 1 nếu không đạt đúng giá trị cam kết.</p>
+      <p style="color: rgba(255,255,255,0.88);">Nhưng bạn không trả 4.696.000đ.</p>
       <a href="dang-ky.html" class="btn-primary mt-8" style="font-size: 1.1rem;">ĐĂNG KÝ THAM GIA NGAY</a>
     </div>
-  </div>
-</section>
 
-<!-- PRICE JUSTIFICATION -->
-<section class="section" id="price-justification">
-  <div class="container-narrow">
-    <div class="story-narrative">
-      <h2 class="text-lavender h2-oneline">Vì sao Master Class La Bàn Nội Tâm chỉ có giá 199K?</h2>
-      <p class="mt-6">Mình từng mất gần 10 năm để thử, sai, hoang mang và đi tìm câu trả lời cho chính mình.</p>
-      <p>Vì thế, mình chọn để Master Class La bàn Nội tâm có mức phí chỉ 199K, để bất kỳ ai đang ở một ngã rẽ của cuộc đời cũng có thể bắt đầu hành trình này.</p>
-      <p class="pull-quote">Thứ đắt nhất trong cuộc đời mình không phải là tiền. Mà là 10 năm sống trong sự mơ hồ, thử rất nhiều nhưng vẫn không biết đâu là con đường thực sự thuộc về mình.</p>
-      <p>Nếu Master Class này giúp bạn rút ngắn hành trình đó... Thì 199K chỉ là một khoản đầu tư rất nhỏ để bạn có thể bắt đầu hành trình này.</p>
+    <div class="story-narrative mt-12">
+      <p>Mình từng mất gần 10 năm để thử, sai, hoang mang, đi tìm câu trả lời cho chính mình. Thứ đắt nhất trong cuộc đời mình chưa bao giờ là tiền — mà là 10 năm sống trong sự mơ hồ đó.</p>
+      <p>Vì vậy mình chọn để mức đầu tư hôm nay chỉ là <strong class="highlight">199.000đ</strong>. Không phải vì chương trình rẻ. Mà vì mình muốn bất kỳ ai đang ở một ngã rẽ của cuộc đời cũng có thể bắt đầu — mà không phải cân nhắc về tiền.</p>
+    </div>
+
+    <div class="guarantee-box mt-12">
+      <span class="badge">Cam kết hoàn tiền 100%, không cần lý do</span>
+      <p class="mt-6" style="text-align:left;">Tham gia đầy đủ 3 buổi. Nếu bạn cảm thấy không có giá trị, nhắn cho đội ngũ MCoach — hoàn tiền 100%, không cần giải thích.</p>
+      <p class="mt-6" style="text-align:left;">Mình dám cam kết điều này vì La Bàn Nội Tâm không đến từ lý thuyết. Nó là kết tinh của gần 10 năm mình tự đi qua hành trình này, cộng 8 năm thực hành Khai vấn Chuyển hóa cùng hàng trăm học viên khác.</p>
+    </div>
+
+    <div class="story-narrative mt-12 text-center">
+      <p><strong>Buổi học diễn ra trực tiếp — không phải video có sẵn.</strong></p>
+      <p>3 buổi Live Zoom cùng Coach Hà đồng hành trực tiếp, có Q&amp;A, bắt đầu 20h ngày 19, 20 và 21/08/2026. Vì là lớp trực tiếp, số chỗ cho mỗi khóa có giới hạn để đảm bảo chất lượng coaching trong buổi.</p>
     </div>
   </div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="section section-alt" id="guarantee">
-  <div class="container-narrow text-center">
-    <div class="guarantee-box">
-      <span class="badge">Lời nhắn từ Hà</span>
-      <div class="founder-banner"><img src="assets/portrait-guarantee.jpg" alt="Ms. Hà Nguyễn"></div>
-      <p class="mt-6" style="text-align:left;">Khi tham gia đầy đủ 3 ngày hiện diện và thực hành, nếu bạn cảm thấy không có giá trị, hãy nhắn cho đội ngũ MCoach để được hoàn tiền 100%, không cần giải thích lý do.</p>
-      <p class="mt-6" style="text-align:left;"><strong style="color:var(--text);">Vì sao chúng mình dám cam kết?</strong> Vì La bàn Nội tâm không được tạo ra từ lý thuyết. Đó là kết tinh của gần 10 năm Hà Nguyễn đi qua hành trình loay hoay tìm hướng đi cho chính mình, cùng 8 năm thực hành Khai vấn Chuyển hóa, đồng hành với hàng trăm khách hàng và học viên đang ở những bước chuyển quan trọng của cuộc đời.</p>
-    </div>
-  </div>
-</section>
-
-<!-- MYTH-BUSTING -->
-<section class="section" id="myth-busting">
-  <div class="container-narrow">
-    <h2 class="text-lavender">Bạn sẽ thay đổi sau chương trình La bàn nội tâm như thế nào?</h2>
-    <div class="mt-12">
-      <div class="compare-row"><div class="compare-before">Mơ hồ về hướng đi, không biết mình thực sự muốn gì.</div><div class="compare-after">Hiểu rõ mình thực sự mong muốn và điều gì quan trọng nhất ở giai đoạn này của cuộc đời.</div></div>
-      <div class="compare-row"><div class="compare-before">Đứng giữa nhiều lựa chọn, càng nghĩ càng rối, không dám quyết định.</div><div class="compare-after">Có một tiêu chí rõ ràng để đưa ra quyết định, thay vì lựa chọn trong cảm xúc hay nỗi sợ.</div></div>
-      <div class="compare-row"><div class="compare-before">Liên tục đổi công việc, đổi mục tiêu nhưng cảm giác bế tắc vẫn lặp lại.</div><div class="compare-after">Nhìn thấy mô thức và niềm tin đang khiến mình lặp lại cùng một vòng lặp.</div></div>
-      <div class="compare-row"><div class="compare-before">Luôn tìm lời khuyên từ người khác vì sợ chọn sai.</div><div class="compare-after">Tin tưởng hơn vào chính mình và biết cách lắng nghe "la bàn nội tâm" trước khi đưa ra lựa chọn.</div></div>
-      <div class="compare-row"><div class="compare-before">Muốn sống đúng với mình nhưng chưa biết bắt đầu từ đâu.</div><div class="compare-after">Có một bản đồ hành động 90 ngày với bước đi đầu tiên rõ ràng và phù hợp với hoàn cảnh hiện tại.</div></div>
-      <div class="compare-row"><div class="compare-before">Bên ngoài vẫn ổn nhưng bên trong luôn thấy trống rỗng, mất kết nối.</div><div class="compare-after">Rõ ràng, bình an hơn lựa chọn hướng đi với hành trình phía trước vẫn còn nhiều điều cần khám phá.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section section-alt" id="faq">
-  <div class="container-narrow">
-    <h2>FAQ</h2>
-    <div class="mt-12">
-      <details class="faq-item"><summary>Master Class này dành cho ai?</summary><div class="answer">Dành cho những người đang ở một bước chuyển của cuộc đời: mơ hồ về hướng đi, phân vân giữa những lựa chọn hoặc cảm thấy công việc hiện tại không còn phản ánh con người mình.</div></details>
-      <details class="faq-item"><summary>Tôi chưa từng học Coaching hay phát triển bản thân, có tham gia được không?</summary><div class="answer">Hoàn toàn được. Master Class được thiết kế cho người mới bắt đầu, với nhiều bài thực hành giúp bạn tự khám phá thay vì phải có kiến thức trước.</div></details>
-      <details class="faq-item"><summary>Master Class có giúp tôi biết ngay mình nên làm nghề gì không?</summary><div class="answer">Không. La bàn Nội tâm không đưa ra câu trả lời thay bạn. Master Class giúp bạn nhìn rõ chính mình để tự đưa ra quyết định đúng với cuộc sống của mình.</div></details>
-      <details class="faq-item"><summary>Tôi đang rất bận, liệu 3 buổi có đáng để dành thời gian?</summary><div class="answer">Nếu bạn đã mơ hồ nhiều tháng hoặc nhiều năm, thì 3 buổi để nhìn lại và định hướng cho chặng đường phía trước là một khoản đầu tư rất xứng đáng.</div></details>
-      <details class="faq-item"><summary>Đây có phải là chương trình trị liệu tâm lý không?</summary><div class="answer">Không. Đây là trải nghiệm thực hành dựa trên phương pháp Khai vấn Chuyển hóa, giúp bạn mở rộng nhận thức và tự khám phá câu trả lời của chính mình.</div></details>
-      <details class="faq-item"><summary>Tôi đã tham gia nhiều chương trình, công cụ về phát triển bản thân. La bàn Nội tâm có gì khác?</summary><div class="answer">Điều khác biệt của La bàn Nội tâm không nằm ở lượng kiến thức bạn học được. Trong 3 ngày, bạn không chỉ nghe chia sẻ, mà sẽ trực tiếp thực hành các công cụ Khai vấn Chuyển hóa để nhìn lại hành trình cuộc đời, nhận diện những la bàn nội tâm đang vận hành những lựa chọn trong đời sống của mình.</div></details>
-      <details class="faq-item"><summary>Nếu không phù hợp, tôi có được hoàn tiền không?</summary><div class="answer">Có. Nếu sau khi tham gia đầy đủ, làm bài tập và soi chiếu trong 3 ngày, bạn cảm thấy mình không nhận được giá trị như cam kết, MCoach sẽ hoàn tiền 100% theo chính sách hoàn tiền của chương trình.</div></details>
-    </div>
-    <p class="mt-8 text-center">Nếu bạn có câu hỏi cần thêm sự hỗ trợ khác, Inbox trực tiếp qua fanpage <strong>La Bàn Nội Tâm</strong> để được hỗ trợ nhé.</p>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
+<!-- BẠN ĐANG Ở MỘT NGÃ RẼ -->
 <section class="section final-cta text-center" id="final-cta">
   <div class="container-narrow">
-    <h2>Bạn đã đủ cố gắng trong vô định rồi.<br>Giờ là lúc tìm lại đúng la bàn nội tâm.</h2>
-    <div class="tagline-row"><span>Đủ đầy với sự nghiệp</span><span>·</span><span>Bình an với nội tâm</span></div>
-    <div class="mt-8"><a href="dang-ky.html" class="btn-primary" style="font-size:1.1rem;">TÔI CHỌN KIẾN TẠO – ĐĂNG KÝ THAM GIA – 199K</a></div>
+    <div class="wide-banner mt-4" style="max-width: 480px; margin: 0 auto 32px; border-color: rgba(255,255,255,0.2);"><img src="assets/portrait-guarantee.jpg" alt="Ms. Hà Nguyễn"></div>
+    <h2 style="font-size: clamp(1.8rem, 4.2vw, 2.6rem); letter-spacing: -0.01em; text-shadow: 0 2px 24px rgba(0,0,0,0.25);">Bạn đang ở một ngã rẽ</h2>
+    <div style="text-align: left; max-width: 640px; margin: 0 auto;">
+      <p class="mt-6" style="color: rgba(255,255,255,0.95); font-weight: 600;">Bạn có hai lựa chọn.</p>
+      <p class="mt-4" style="color: rgba(255,255,255,0.85);">Một là, bạn đóng trang này lại. Tiếp tục với những gì đang có. Có thể sẽ ổn. Nhưng năm sau, khi đứng trước một ngã rẽ khác, bạn vẫn sẽ đứng đó — với đúng câu hỏi hôm nay: <em class="accent-italic" style="color: #fff;">"Đây có thật sự là con đường của mình không?"</em></p>
+      <p class="mt-4" style="color: rgba(255,255,255,0.85);">Hai là, bạn dành ra 3 buổi tối. Không phải để có ngay một câu trả lời hoàn hảo. Mà để <strong style="color: #fff;">tìm lại chiếc la bàn giúp bạn tự tin đưa ra mọi lựa chọn sau này</strong> — không chỉ lựa chọn hôm nay.</p>
+    </div>
+    <div class="tagline-row" style="color: #fff; font-size: clamp(1.35rem, 3.2vw, 1.85rem); font-weight: 800; font-style: normal; letter-spacing: 0.01em; text-shadow: 0 0 28px rgba(193,98,46,0.65), 0 2px 10px rgba(0,0,0,0.35);"><span>Lựa chọn nào cũng là của bạn</span><span style="color: var(--accent-warm);">·</span><span>Nhưng chỉ một trong hai đưa bạn tiến về phía trước</span></div>
+    <div class="mt-8"><a href="dang-ky.html" class="btn-primary" style="font-size:1.1rem;">TÔI CHỌN KIẾN TẠO — ĐĂNG KÝ THAM GIA — 199.000đ</a></div>
   </div>
 </section>
 
