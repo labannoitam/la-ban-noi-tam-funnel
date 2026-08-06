@@ -42,6 +42,24 @@
   .pulse { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: currentColor; margin-right: 8px; vertical-align: middle; animation: pulse 1.5s ease-in-out infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2985723285152509');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="container">
@@ -91,6 +109,14 @@
     document.getElementById('total').textContent = formatVnd(amount) + 'đ';
   }
   updateQR(BASE_PRICE);
+
+  if (order.orderId && typeof fbq === 'function') {
+    fbq('track', 'InitiateCheckout', {
+      content_name: 'Master Class La Bàn Nội Tâm',
+      currency: 'VND',
+      value: order.totalAmount || BASE_PRICE
+    });
+  }
 
   async function pollStatus() {
     try {
