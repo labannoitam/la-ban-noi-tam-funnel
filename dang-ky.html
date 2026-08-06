@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đăng Ký Master Class — La Bàn Nội Tâm</title>
+<title>Đăng Ký Master Class – La Bàn Nội Tâm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FBF7F2; --surface: #FFFFFF; --surface-2: #F2E6D6;
-    --text: #241D16; --text-muted: #5E4F40;
-    --accent: #1D4E89; --accent-soft: rgba(29,78,137,0.09); --accent-deep: #0F2540;
-    --accent-warm: #C1622E;
-    --border: rgba(44,38,32,0.20);
-    --font-h: 'Lora', serif; --font-b: 'Inter', sans-serif; --font-art: 'Playfair Display', serif;
+    --bg: #F3F6EE; --surface: #FFFFFF; --surface-2: #E8EEE0;
+    --text: #18242B; --text-muted: #3F4F58;
+    --accent: #1F3A66; --accent-soft: rgba(31,58,102,0.08); --accent-deep: #142744;
+    --accent-warm: #E0A93D;
+    --border: rgba(31,58,102,0.14);
+    --font-h: 'Playfair Display', serif; --font-b: 'Montserrat', sans-serif; --font-art: 'Playfair Display', serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font-b); background: linear-gradient(180deg, var(--bg) 0%, #F7F1E8 100%); color: var(--text); line-height: 1.6; padding: 40px 16px; }
+  body { font-family: var(--font-b); background: var(--bg); color: var(--text); line-height: 1.6; padding: 40px 16px; }
   .site-logo { display: block; height: 30px; width: auto; margin: 0 auto 20px; opacity: 0.94; }
   .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 36px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 24px 56px rgba(44,38,32,0.10); }
   h1 { font-family: var(--font-h); font-size: 23px; margin-bottom: 4px; color: var(--text); }
@@ -48,11 +48,11 @@
 <div class="container">
   <img src="assets/logo.png" alt="MCoach" class="site-logo">
   <h1>Đăng Ký Master Class</h1>
-  <p class="lead">La Bàn Nội Tâm — cùng Ms. Hà Nguyễn</p>
+  <p class="lead">La Bàn Nội Tâm – cùng Ms. Hà Nguyễn</p>
 
   <h2 class="section-title">Thông tin Master Class</h2>
   <div class="info-box">
-    <div class="row"><span>Ngày</span><span>19, 20 &amp; 21/08/2026</span></div>
+    <div class="row"><span>Ngày</span><span>26, 27 &amp; 28/08/2026</span></div>
     <div class="row"><span>Thứ</span><span>Thứ 4, Thứ 5, Thứ 6</span></div>
     <div class="row"><span>Giờ</span><span>20h00 – 21h30</span></div>
     <div class="row"><span>Thời lượng</span><span>90 phút x 3 buổi</span></div>
@@ -86,14 +86,14 @@
     <label>Email *</label>
     <input type="email" name="email" required>
 
-    <button type="submit" class="cta" id="submitBtn">Giữ Chỗ Của Tôi — 199K →</button>
+    <button type="submit" class="cta" id="submitBtn">Giữ Chỗ Của Tôi – 199K →</button>
     <p class="error" id="error"></p>
     <p class="trust-row">🔒 Thanh toán an toàn qua VietQR &nbsp;·&nbsp; Hoàn tiền 100% nếu không phù hợp</p>
   </form>
 </div>
 
 <script>
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzEOV2uzEvMVl6hluKuqfZn5u-0B-NU7a-3B98WorFhYN6pmmfwCMJ8LyiEO5a2RQ3icQ/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwPnXUSi4dZ5Nlx08KiPbPwn0CVWgGyStIoDemROxg35wOQXso4XW3i8n1D3P4K_B5OOw/exec';
 
   document.getElementById('orderForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -135,7 +135,7 @@
       errEl.textContent = 'Lỗi: ' + err.message + '. Vui lòng thử lại.';
       errEl.style.display = 'block';
       btn.disabled = false;
-      btn.textContent = 'Giữ Chỗ Của Tôi — 199K →';
+      btn.textContent = 'Giữ Chỗ Của Tôi – 199K →';
     }
   });
 </script>
