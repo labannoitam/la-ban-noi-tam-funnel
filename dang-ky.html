@@ -37,8 +37,8 @@
   label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; color: var(--text); }
   input, select { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; background: var(--surface-2); color: var(--text); font-family: var(--font-b); transition: border-color 0.15s; }
   input:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-  .cta { width: 100%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: #fff; padding: 16px; font-size: 16px; font-weight: 700; font-family: var(--font-h); border: none; border-radius: 8px; cursor: pointer; margin-top: 22px; letter-spacing: 0.3px; box-shadow: 0 10px 24px rgba(29,78,137,0.28); transition: transform 0.15s, box-shadow 0.15s; }
-  .cta:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(29,78,137,0.34); }
+  .cta { width: 100%; background: var(--accent-warm); color: var(--accent-deep); padding: 16px; font-size: 16px; font-weight: 700; font-family: var(--font-h); border: none; border-radius: 8px; cursor: pointer; margin-top: 22px; letter-spacing: 0.3px; box-shadow: 0 10px 24px rgba(169,130,47,0.32); transition: transform 0.15s, box-shadow 0.15s; }
+  .cta:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(169,130,47,0.4); }
   .cta:disabled { background: #999; cursor: not-allowed; transform: none; box-shadow: none; }
   .error { color: #B94A3C; font-size: 13px; margin-top: 8px; display: none; }
   .trust-row { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 14px; }
@@ -50,32 +50,6 @@
   <h1>Đăng Ký Master Class</h1>
   <p class="lead">La Bàn Nội Tâm – cùng Ms. Hà Nguyễn</p>
 
-  <h2 class="section-title">Thông tin Master Class</h2>
-  <div class="info-box">
-    <div class="row"><span>Ngày</span><span>26, 27 &amp; 28/08/2026</span></div>
-    <div class="row"><span>Thứ</span><span>Thứ 4, Thứ 5, Thứ 6</span></div>
-    <div class="row"><span>Giờ</span><span>20h00 – 21h30</span></div>
-    <div class="row"><span>Thời lượng</span><span>90 phút x 3 buổi</span></div>
-    <div class="row"><span>Hình thức</span><span>Online qua Zoom</span></div>
-  </div>
-  <p class="lead" style="margin-top:8px;">Link Zoom sẽ được gửi sau khi bạn đăng ký.</p>
-
-  <h2 class="section-title">Bạn sẽ nhận được</h2>
-  <ul class="offer-items">
-    <li>03 Buổi Master Class Trực Tiếp Live Zoom</li>
-    <li>Bộ File Thực Hành: Life Audit &amp; Belief Mapping Sheet</li>
-    <li>Sơ Đồ Vận Hành 3 Bước: Nhìn Lại – Trở Về – Kiến Tạo</li>
-    <li>Bản Thiết Kế Lộ Trình 90D Transformation Matrix</li>
-    <li>Quyền Truy Cập Video Ghi Hình 3 Buổi (Xem lại 30 ngày)</li>
-    <li>Quyền Tham Gia Cộng Đồng Thực Hành Khai Vấn Chuyển Hóa MCoach Private</li>
-  </ul>
-
-  <div class="price-box">
-    <div class="strike">4.696.000 VNĐ</div>
-    <div><span class="save">Tiết kiệm 40%</span></div>
-    <div class="main">199.000 VNĐ</div>
-  </div>
-
   <form id="orderForm">
     <label>Họ tên *</label>
     <input type="text" name="name" required>
@@ -86,9 +60,35 @@
     <label>Email *</label>
     <input type="email" name="email" required>
 
-    <button type="submit" class="cta" id="submitBtn">Giữ Chỗ Của Tôi – 199K →</button>
+    <button type="submit" class="cta" id="submitBtn">ĐĂNG KÝ THAM GIA</button>
     <p class="error" id="error"></p>
     <p class="trust-row">🔒 Thanh toán an toàn qua VietQR &nbsp;·&nbsp; Hoàn tiền 100% nếu không phù hợp</p>
+
+    <h2 class="section-title">Thông tin Master Class</h2>
+    <div class="info-box">
+      <div class="row"><span>Ngày</span><span>26, 27 &amp; 28/08/2026</span></div>
+      <div class="row"><span>Thứ</span><span>Thứ 4, Thứ 5, Thứ 6</span></div>
+      <div class="row"><span>Giờ</span><span>20h00 – 21h30</span></div>
+      <div class="row"><span>Thời lượng</span><span>90 phút x 3 buổi</span></div>
+      <div class="row"><span>Hình thức</span><span>Online qua Zoom</span></div>
+    </div>
+    <p class="lead" style="margin-top:8px;">Link Zoom sẽ được gửi sau khi bạn đăng ký.</p>
+
+    <h2 class="section-title">Bạn sẽ nhận được</h2>
+    <ul class="offer-items">
+      <li>03 Buổi Master Class Trực Tiếp Live Zoom</li>
+      <li>Bộ File Thực Hành: Life Audit &amp; Belief Mapping Sheet</li>
+      <li>Sơ Đồ Vận Hành 3 Bước: Nhìn Lại – Trở Về – Kiến Tạo</li>
+      <li>Bản Thiết Kế Lộ Trình 90D Transformation Matrix</li>
+      <li>Quyền Truy Cập Video Ghi Hình 3 Buổi (Xem lại 30 ngày)</li>
+      <li>Quyền Tham Gia Cộng Đồng Thực Hành Khai Vấn Chuyển Hóa MCoach Private</li>
+    </ul>
+
+    <div class="price-box">
+      <div class="strike">4.696.000 VNĐ</div>
+      <div><span class="save">Tiết kiệm 40%</span></div>
+      <div class="main">199.000 VNĐ</div>
+    </div>
   </form>
 </div>
 
@@ -135,7 +135,7 @@
       errEl.textContent = 'Lỗi: ' + err.message + '. Vui lòng thử lại.';
       errEl.style.display = 'block';
       btn.disabled = false;
-      btn.textContent = 'Giữ Chỗ Của Tôi – 199K →';
+      btn.textContent = 'ĐĂNG KÝ THAM GIA';
     }
   });
 </script>
