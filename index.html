@@ -69,12 +69,12 @@ p { color: var(--text); }
 /* Buttons */
 .btn-primary {
   display: inline-block; padding: 18px 38px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color: #FFFFFF; border-radius: 999px;
+  background: var(--gold);
+  color: var(--accent-deep); border-radius: 999px;
   font-weight: 700; font-size: 1.05rem; font-family: var(--font-b);
-  transition: all 0.2s; box-shadow: 0 10px 28px rgba(20, 39, 68, 0.28);
+  transition: all 0.2s; box-shadow: 0 10px 28px rgba(169, 130, 47, 0.32);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(20, 39, 68, 0.34); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(169, 130, 47, 0.4); }
 
 .badge {
   display: inline-block; padding: 8px 18px; border-radius: 999px;
@@ -87,8 +87,8 @@ p { color: var(--text); }
 .eyebrow {
   display: inline-block; font-family: var(--font-b); font-style: normal;
   font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--accent); font-weight: 800; margin-bottom: 16px;
-  background: var(--accent-soft); padding: 8px 18px; border-radius: 999px;
+  color: var(--accent-deep); font-weight: 800; margin-bottom: 16px;
+  background: var(--gold); padding: 8px 18px; border-radius: 999px;
 }
 
 /* Hero */
@@ -108,13 +108,13 @@ p { color: var(--text); }
   font-size: clamp(1.35rem, 3vw, 2rem); color: var(--accent); line-height: 1.45;
   position: relative; z-index: 1;
 }
-.pull-quote::before {
+.pull-quote-icon::before {
   content: "\201C"; position: absolute; top: -0.5em; left: 50%; transform: translateX(-50%);
   font-family: var(--font-h); font-size: 5rem; color: var(--accent-soft); z-index: -1; line-height: 1;
 }
 
 /* Story narrative */
-.story-narrative p { font-size: 1.08rem; margin-bottom: 18px; }
+.story-narrative p { font-size: 1rem; margin-bottom: 18px; }
 .story-narrative p.muted { color: var(--text-muted); }
 
 /* Reason / Session / Testimonial cards */
@@ -127,13 +127,12 @@ p { color: var(--text); }
 
 .value-list { display: grid; gap: 20px; }
 .value-item { background: var(--surface); border-left: 3px solid var(--gold); padding: 20px 24px; border-radius: 8px; }
-.value-item p { font-size: 1.06rem; }
+.value-item p { font-size: 1rem; }
 .value-item strong { color: var(--accent); }
 
 .fit-list { list-style: none; padding: 0; margin-top: 16px; }
-.fit-list li { padding: 9px 0 9px 28px; position: relative; font-size: 1.03rem; }
+.fit-list li { padding: 9px 0 9px 28px; position: relative; font-size: 1rem; }
 
-.guarantee-heading { font-size: clamp(2rem, 5.5vw, 3.1rem) !important; }
 .guarantee-seal { font-size: 2.6rem; margin-bottom: 12px; }
 .guarantee-badge-big {
   display: block; font-family: var(--font-h); font-weight: 800;
@@ -163,7 +162,7 @@ p { color: var(--text); }
 .mini-case-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .mini-case-name { font-family: var(--font-h); font-weight: 700; color: var(--accent); font-size: 1.15rem; margin-bottom: 4px; }
 .mini-case-role { font-style: italic; color: var(--gold); font-size: 0.92rem; margin-bottom: 14px; }
-.mini-case p { font-size: 0.98rem; color: var(--text-muted); text-align: left; }
+.mini-case p { font-size: 1rem; color: var(--text-muted); text-align: left; }
 
 .wide-banner { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); max-width: 880px; margin: 0 auto; }
 .wide-banner img { width: 100%; }
@@ -178,7 +177,7 @@ p { color: var(--text); }
 .testi-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .testi-name { font-family: var(--font-h); font-weight: 700; color: var(--accent); font-size: 1rem; margin-bottom: 2px; }
 .testi-role { font-size: 0.8rem; color: var(--gold); font-style: italic; margin-bottom: 14px; }
-.testi-card p { font-size: 0.92rem; color: var(--text-muted); text-align: left; }
+.testi-card p { font-size: 1rem; color: var(--text-muted); text-align: left; }
 
 .zoom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
 .zoom-grid img { border-radius: var(--radius); border: 1px solid var(--border); }
@@ -230,7 +229,7 @@ p { color: var(--text); }
 .choice-fade { background: var(--surface-2); }
 .choice-fade .choice-label { color: var(--gold); }
 .choice-fade p { color: var(--text-muted); }
-.choice-bold { background: var(--surface-2); border: 2px solid var(--accent); box-shadow: 0 14px 36px rgba(20,39,68,0.12); }
+.choice-bold { background: rgba(31,58,102,0.12); border: 2px solid var(--accent); box-shadow: 0 14px 36px rgba(20,39,68,0.12); }
 .choice-bold .choice-label { color: var(--gold); }
 
 /* Sticky mobile CTA */
@@ -260,7 +259,7 @@ p { color: var(--text); }
   pointer-events: none;
 }
 .btn-primary { position: relative; }
-.final-cta .btn-primary:hover { box-shadow: 0 0 0 4px var(--accent-soft), 0 14px 34px rgba(20,39,68,0.34); }
+.final-cta .btn-primary:hover { box-shadow: 0 0 0 4px rgba(224,169,61,0.18), 0 14px 34px rgba(169,130,47,0.4); }
 
 footer { padding: 36px 0; background: var(--accent-deep); border-top: 1px solid var(--border); text-align: center; color: rgba(255,255,255,0.92); font-size: 0.9rem; }
 footer p { color: rgba(255,255,255,0.92); }
@@ -274,7 +273,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
 <div class="topbar">
   <div class="container">
     <img src="assets/logo.png" alt="MCoach" class="site-logo">
-    <a href="dang-ky.html" class="btn-primary">Đăng Ký Ngay</a>
+    <a href="dang-ky.html" class="btn-primary">ĐĂNG KÝ THAM GIA</a>
   </div>
 </div>
 
@@ -283,16 +282,15 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="badge">Master Class Live Zoom · 26–28/08/2026</span>
         <p class="mt-6" style="font-size: 0.92rem; color: var(--text-muted); font-style: italic; text-align: center;">
           Dành cho người đã đổi nhiều vị trí công việc, học nhiều khóa học<br>nhưng vẫn chưa tìm ra hướng đi khiến mình thực sự dấn thân trọn vẹn.
         </p>
-        <h1 class="mt-6" style="font-size: clamp(1.6rem, 4.2vw, 2.5rem);">Ngừng loay hoay với <span class="hl-accent">con đường sự nghiệp</span> và tìm ra hướng đi phù hợp với con người bạn</h1>
+        <h1 class="mt-6" style="text-align: center;">Ngừng loay hoay với <span class="hl-accent">con đường sự nghiệp</span> và tìm ra hướng đi phù hợp với con người bạn</h1>
         <div class="hero-meta">
           <span>20h tối</span><span>26, 27 &amp; 28/08/2026</span><span>Live Zoom</span>
         </div>
         <div class="mt-8">
-          <a href="dang-ky.html" class="btn-primary">Tôi Muốn Tìm Lại Hướng Đi – Đăng Ký Ngay</a>
+          <a href="dang-ky.html" class="btn-primary">ĐĂNG KÝ THAM GIA</a>
         </div>
       </div>
       <div class="hero-portrait">
@@ -378,7 +376,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
       <p><strong>Và mình sắp chia sẻ cho bạn cách tìm lại chiếc la bàn đó</strong> – trong 3 buổi tối tới đây.</p>
     </div>
     <div class="text-center mt-8">
-      <a href="dang-ky.html" class="btn-primary">Tham Gia Master Class</a>
+      <a href="dang-ky.html" class="btn-primary">ĐĂNG KÝ THAM GIA</a>
     </div>
   </div>
 
@@ -454,7 +452,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
   </div>
 
   <div class="container-narrow mt-16">
-    <p class="text-center mt-8" style="margin-bottom: 24px; font-size: 1.4rem; font-weight: 700; color: var(--accent); font-family: var(--font-h);">Và còn rất nhiều người đã có được kết quả cho mình:</p>
+    <p class="text-center mt-8" style="margin-bottom: 24px; font-size: 1.3rem; font-weight: 700; color: var(--accent); font-family: var(--font-h);">Và còn rất nhiều người đã có được kết quả cho mình:</p>
     <div class="testi-grid">
       <div class="testi-card">
         <div class="testi-avatar"><img src="assets/avatar-testi-thanhtam.jpg" alt="Thanh Tâm"></div>
@@ -602,7 +600,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
         <img src="assets/hoc-vien-zoom-1.png" alt="Buổi coaching nhóm cùng học viên MCoach">
         <img src="assets/hoc-vien-zoom-2.png" alt="Cộng đồng học viên MCoach trên Zoom">
       </div>
-      <h3>✓ Phù hợp với bạn nếu</h3>
+      <h3>Phù hợp với bạn nếu</h3>
       <ul class="fit-list contrast-yes">
         <li>Bạn đang đứng trước một ngã rẽ trong công việc hoặc cuộc sống.</li>
         <li>Bạn phân vân giữa ở lại hay thay đổi.</li>
@@ -610,7 +608,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
         <li>Bạn không muốn tiếp tục sống trong cảm giác mơ hồ thêm vài năm nữa.</li>
         <li>Bạn mong muốn tìm ra một hướng đi đúng với chính mình, thay vì sống theo kỳ vọng của người khác.</li>
       </ul>
-      <h3 class="mt-12" style="color: #A3453D;">✕ Chưa phù hợp nếu</h3>
+      <h3 class="mt-12" style="color: #A3453D;">Chưa phù hợp nếu</h3>
       <ul class="fit-list contrast-no">
         <li>Bạn đang tìm một người quyết định thay mình nên làm chọn công việc gì.</li>
         <li>Bạn mong có ngay một câu trả lời chỉ sau vài giờ.</li>
@@ -628,7 +626,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
 <section class="section section-alt" id="offer">
   <div class="container-narrow">
     <div class="pull-quote-wrap" style="margin-bottom: 24px;">
-      <p class="pull-quote">Bạn sẽ không rời chương trình với một cái tên nghề nghiệp. Bạn rời chương trình với <span class="hl-accent">một tấm bản đồ – và biết chính xác bước đầu tiên.</span></p>
+      <p class="pull-quote pull-quote-icon">Bạn sẽ không rời chương trình với một cái tên nghề nghiệp. Bạn rời chương trình với <span class="hl-accent">một tấm bản đồ – và biết chính xác bước đầu tiên.</span></p>
     </div>
 
     <div class="story-narrative">
@@ -659,14 +657,17 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
       </div>
 
       <p style="text-align:left; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto;">
-        Mình từng mất <strong>gần 10 năm</strong> để thử, sai, hoang mang, đi tìm câu trả lời cho chính mình. <strong>Thứ đắt nhất trong cuộc đời mình chưa bao giờ là tiền</strong> – mà là <strong>10 năm sống trong sự mơ hồ</strong> đó.
+        Mình từng mất <strong>gần 10 năm</strong> để thử, sai, hoang mang, đi tìm câu trả lời cho chính mình.
+      </p>
+      <p class="mt-4" style="text-align:left; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto;">
+        <strong>Thứ đắt nhất trong cuộc đời mình chưa bao giờ là tiền</strong> – mà là <strong>10 năm sống trong sự mơ hồ</strong> đó.
       </p>
       <p class="mt-4" style="text-align:left; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto;">
         Mình chọn để mức đầu tư hôm nay chỉ là <strong>199.000đ</strong>, thấp hơn rất nhiều giá trị thực sự của chương trình, vì mình không muốn chi phí trở thành lý do khiến ai đó tiếp tục <strong>trì hoãn một bước chuyển quan trọng của cuộc đời.</strong>
       </p>
 
       <div class="text-center mt-8">
-        <a href="dang-ky.html" class="btn-primary" style="font-size: 1.15rem;">Đăng Ký Ngay – 199.000đ</a>
+        <a href="dang-ky.html" class="btn-primary" style="font-size: 1.15rem;">ĐĂNG KÝ THAM GIA</a>
       </div>
     </div>
   </div>
@@ -693,7 +694,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
     <div class="wide-banner mt-4" style="max-width: 480px; margin: 0 auto 40px;">
       <img src="assets/portrait-guarantee.jpg" alt="Ms. Hà Nguyễn đọc lá thư gửi bạn">
     </div>
-    <h2 class="text-center">Nếu bạn đang ở một ngã rẽ nào đó,<br>bạn sẽ có hai lựa chọn</h2>
+    <h2 class="text-center">Nếu bạn đang ở một ngã rẽ nào đó, bạn sẽ có hai lựa chọn</h2>
     <div class="choice-grid mt-12">
       <div class="choice-block choice-fade">
         <div class="choice-label">Lựa chọn 1 – Ở lại</div>
@@ -716,7 +717,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
     </div>
 
     <div class="text-center mt-8">
-      <a href="dang-ky.html" class="btn-primary" style="font-size: 1.15rem;">Tôi Muốn Tìm Lại La Bàn Nội Tâm Của Mình</a>
+      <a href="dang-ky.html" class="btn-primary" style="font-size: 1.15rem;">ĐĂNG KÝ THAM GIA</a>
     </div>
   </div>
 </section>
@@ -733,7 +734,7 @@ footer .site-logo { filter: brightness(0) invert(1); opacity: 0.9; margin: 0 aut
 
 <!-- ===================== STICKY MOBILE CTA ===================== -->
 <div class="sticky-cta">
-  <a href="dang-ky.html" class="btn-primary">Đăng Ký Ngay – 199.000đ</a>
+  <a href="dang-ky.html" class="btn-primary">ĐĂNG KÝ THAM GIA</a>
 </div>
 
 </body>
