@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thanh Toán Thành Công – La Bàn Nội Tâm</title>
+<title>Đăng Ký Thành Công – Bình An Nội Tâm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F3F6EE; --surface: #FFFFFF; --surface-2: #E8EEE0;
-    --text: #18242B; --text-muted: #3F4F58;
-    --accent: #1F3A66; --accent-soft: rgba(31,58,102,0.08); --accent-deep: #142744;
-    --accent-warm: #E0A93D;
-    --border: rgba(31,58,102,0.14);
+    --bg: #FBF8EE; --surface: #FFFFFF; --surface-2: #F1EDDD;
+    --text: #22262B; --text-muted: #5A5F55;
+    --accent: #365A4A; --accent-soft: rgba(54,90,74,0.08); --accent-deep: #1F3A30;
+    --accent-warm: #C08A3E;
+    --border: rgba(34,38,43,0.12);
     --font-h: 'Playfair Display', serif; --font-b: 'Montserrat', sans-serif; --font-art: 'Playfair Display', serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: var(--font-b); background: var(--bg); color: var(--text); line-height: 1.6; padding: 40px 16px; }
   .site-logo { display: block; height: 30px; width: auto; margin: 0 auto 20px; opacity: 0.94; }
-  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 44px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 24px 56px rgba(44,38,32,0.10); text-align: center; }
-  .check { width: 68px; height: 68px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 34px; margin-bottom: 16px; font-weight: 700; box-shadow: 0 12px 28px rgba(20,39,68,0.3); }
+  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 44px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 24px 56px rgba(31,45,38,0.10); text-align: center; }
+  .check { width: 68px; height: 68px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 34px; margin-bottom: 16px; font-weight: 700; box-shadow: 0 12px 28px rgba(31,58,48,0.3); }
   h1 { font-family: var(--font-h); font-size: 25px; margin-bottom: 8px; color: var(--text); }
   .lead { color: var(--text-muted); margin-bottom: 24px; font-size: 15px; }
   .info { background: var(--surface-2); border: 1px solid var(--border); padding: 16px 18px; border-radius: 10px; text-align: left; margin: 20px 0; }
@@ -59,14 +59,14 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
 <div class="container">
   <img src="assets/logo.png" alt="MCoach" class="site-logo">
   <div class="check">✓</div>
-  <h1>Thanh Toán Thành Công</h1>
-  <p class="lead">Bạn đã thanh toán thành công Master Class La Bàn Nội Tâm.</p>
+  <h1 id="titleText">Đăng Ký Thành Công</h1>
+  <p class="lead" id="leadText">Bạn đã đăng ký thành công Master Class Bình An Nội Tâm.</p>
 
   <div class="info">
     <div class="info-row"><span>Mã đơn</span><strong id="orderId">—</strong></div>
     <div class="info-row"><span>Họ tên</span><strong id="orderName">—</strong></div>
     <div class="info-row"><span>Email</span><strong id="orderEmail">—</strong></div>
-    <div class="info-row"><span>Số tiền</span><strong id="orderAmount">—</strong></div>
+    <div class="info-row" id="amountRow"><span>Số tiền</span><strong id="orderAmount">—</strong></div>
   </div>
 
   <div class="steps">
@@ -97,13 +97,23 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
     document.getElementById('orderId').textContent = order.orderId;
     document.getElementById('orderName').textContent = order.name || '—';
     document.getElementById('orderEmail').textContent = order.email || '—';
-    const amt = Number(order.totalAmount || 0).toLocaleString('en-US').replace(/,/g, '.');
-    document.getElementById('orderAmount').textContent = amt + 'đ';
+
+    if (order.ticket === 'VIP') {
+      document.getElementById('titleText').textContent = 'Thanh Toán Thành Công';
+      document.getElementById('leadText').textContent = 'Bạn đã thanh toán thành công Vé VIP Master Class Bình An Nội Tâm.';
+      const amt = Number(order.totalAmount || 0).toLocaleString('en-US').replace(/,/g, '.');
+      document.getElementById('orderAmount').textContent = amt + 'đ';
+    } else {
+      document.getElementById('titleText').textContent = 'Đăng Ký Thành Công';
+      document.getElementById('leadText').textContent = 'Bạn đã đăng ký thành công Vé Tiêu Chuẩn (Miễn phí) Master Class Bình An Nội Tâm.';
+      document.getElementById('amountRow').style.display = 'none';
+    }
 
     const purchaseTrackedKey = 'purchase_tracked_' + order.orderId;
     if (typeof fbq === 'function' && !sessionStorage.getItem(purchaseTrackedKey)) {
-      fbq('track', 'Purchase', {
-        content_name: 'Master Class La Bàn Nội Tâm',
+      fbq('track', order.ticket === 'VIP' ? 'Purchase' : 'CompleteRegistration', {
+        content_name: 'Master Class Bình An Nội Tâm',
+        content_category: order.ticket || 'FREE',
         currency: 'VND',
         value: order.totalAmount || 0
       });
