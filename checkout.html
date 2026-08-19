@@ -9,28 +9,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FBF8EE; --surface: #FFFFFF; --surface-2: #F1EDDD;
+    --bg: #F6EEDC; --surface: #FFFFFF; --surface-2: #F1E4C4;
     --text: #22262B; --text-muted: #5A5F55;
-    --accent: #365A4A; --accent-soft: rgba(54,90,74,0.08); --accent-deep: #1F3A30;
-    --heading: #1B2C56;
-    --accent-warm: #C08A3E;
-    --border: rgba(34,38,43,0.12);
+    --accent: #24462E; --accent-soft: rgba(36,70,46,0.08); --accent-deep: #16301F;
+    --heading: #16283F;
+    --accent-warm: #B8803D; --accent-warm-light: #E3B173;
+    --border: rgba(34,38,43,0.14);
+    --shadow: rgba(22,40,63,.28); --shadow-soft: rgba(22,40,63,.14);
     --font-h: 'Playfair Display', serif; --font-b: 'Montserrat', sans-serif; --font-art: 'Playfair Display', serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font-b); background: var(--bg); color: var(--text); line-height: 1.6; padding: 40px 16px; }
+  body {
+    font-family: var(--font-b); color: var(--text); line-height: 1.6; padding: 40px 16px;
+    background:
+      radial-gradient(900px 500px at 10% -10%, rgba(184,128,61,.12), transparent 60%),
+      radial-gradient(700px 460px at 110% 25%, rgba(36,70,46,.10), transparent 55%),
+      var(--bg);
+  }
   .site-logo { display: block; height: 30px; width: auto; margin: 0 auto 20px; opacity: 0.94; }
-  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 36px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 24px 56px rgba(31,45,38,0.10); }
+  .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 36px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 28px 56px -20px var(--shadow), 0 3px 10px -2px var(--shadow-soft); }
   h1 { font-family: var(--font-h); font-size: 22px; margin-bottom: 4px; color: var(--text); }
   .lead { color: var(--text-muted); margin-bottom: 22px; font-size: 14px; }
   h2.section-title { font-family: var(--font-h); font-size: 15px; color: var(--heading); letter-spacing: 0.04em; text-transform: uppercase; margin: 20px 0 10px; }
 
-  .summary { background: linear-gradient(160deg, var(--accent) 0%, var(--accent-deep) 80%); color: #fff; padding: 20px 22px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 16px 36px rgba(31,58,48,0.22); }
+  .summary { background: linear-gradient(160deg, var(--accent) 0%, var(--accent-deep) 80%); color: #fff; padding: 20px 22px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 18px 38px -18px var(--shadow); }
   .summary-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
   .summary-total { font-family: var(--font-h); font-size: 22px; font-weight: 800; color: var(--accent-warm); padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 8px; }
 
   .qr-section { text-align: center; padding: 12px 0 20px; }
-  .qr-section img { max-width: 260px; border: 6px solid var(--surface-2); border-radius: 10px; margin: 0 auto; box-shadow: 0 10px 24px rgba(31,45,38,0.08); }
+  .qr-section img { max-width: 260px; border: 6px solid var(--surface-2); border-radius: 10px; margin: 0 auto; box-shadow: 0 16px 32px -16px var(--shadow); }
   .qr-hint { font-size: 13px; color: var(--text-muted); margin-top: 10px; font-style: italic; }
 
   .info-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 8px; }
@@ -97,7 +104,7 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
   const VIP_PRICE = 149000;
 
   const order = JSON.parse(sessionStorage.getItem('order') || '{}');
-  if (!order.orderId) { window.location.href = 'dang-ky.html'; }
+  if (!order.orderId) { window.location.href = 'index.html#dang-ky'; }
   if (order.ticket === 'FREE') { window.location.href = 'xac-nhan.html'; }
 
   document.getElementById('ckContent').textContent = order.ckContent;
@@ -128,7 +135,7 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
         const box = document.getElementById('statusBox');
         box.className = 'status paid';
         document.getElementById('statusText').textContent = '✓ Đã nhận giao dịch · Đang chuyển trang...';
-        setTimeout(() => { window.location.href = 'xac-nhan.html'; }, 1500);
+        setTimeout(() => { window.location.href = 'xac-nhan-vip.html'; }, 1500);
         return;
       }
     } catch (err) { console.error('poll failed', err); }

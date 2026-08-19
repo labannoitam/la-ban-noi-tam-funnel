@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đăng Ký Thành Công (Vé Tiêu Chuẩn) – Bình An Nội Tâm</title>
+<title>Thanh Toán Thành Công (Vé VIP) – Bình An Nội Tâm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
   }
   .site-logo { display: block; height: 30px; width: auto; margin: 0 auto 20px; opacity: 0.94; }
   .container { max-width: 520px; margin: 0 auto; background: var(--surface); padding: 44px 32px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 28px 56px -20px var(--shadow), 0 3px 10px -2px var(--shadow-soft); text-align: center; }
+  .vip-badge { display: inline-block; background: linear-gradient(155deg, var(--accent-warm-light) 0%, var(--accent-warm) 60%, #8C5F2A 100%); color: #2A1D0C; font-weight: 800; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px; margin-bottom: 14px; box-shadow: 0 8px 18px -8px var(--shadow); }
   .check { width: 68px; height: 68px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 34px; margin-bottom: 16px; font-weight: 700; box-shadow: 0 14px 30px -10px var(--shadow); }
   .zalo-cta { display: inline-block; margin-top: 10px; background: linear-gradient(155deg, var(--accent-warm-light) 0%, var(--accent-warm) 55%, #8C5F2A 100%); color: #2A1D0C; font-weight: 700; font-size: 13.5px; padding: 10px 20px; border-radius: 999px; text-decoration: none; box-shadow: 0 10px 22px -8px var(--shadow), inset 0 1px 0 rgba(255,255,255,.35); }
   h1 { font-family: var(--font-h); font-size: 25px; margin-bottom: 8px; color: var(--text); }
@@ -67,14 +68,16 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
 <body>
 <div class="container">
   <img src="assets/logo.png" alt="MCoach" class="site-logo">
+  <div class="vip-badge">Vé VIP · Chuyển hóa trọn vẹn</div>
   <div class="check">✓</div>
-  <h1>Đăng Ký Thành Công</h1>
-  <p class="lead">Bạn đã đăng ký thành công Vé Tiêu Chuẩn (Miễn phí) Master Class Bình An Nội Tâm.</p>
+  <h1>Thanh Toán Thành Công</h1>
+  <p class="lead">Bạn đã thanh toán thành công Vé VIP Master Class Bình An Nội Tâm.</p>
 
   <div class="info">
     <div class="info-row"><span>Mã đơn</span><strong id="orderId">—</strong></div>
     <div class="info-row"><span>Họ tên</span><strong id="orderName">—</strong></div>
     <div class="info-row"><span>Email</span><strong id="orderEmail">—</strong></div>
+    <div class="info-row"><span>Số tiền</span><strong id="orderAmount">—</strong></div>
   </div>
 
   <div class="steps">
@@ -88,9 +91,9 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-text">
-        <div class="step-title">Tham gia nhóm Zalo Vé Tiêu Chuẩn</div>
-        <div class="step-desc">Bấm vào nút bên dưới để tham gia ngay nhóm Zalo dành cho học viên Vé Tiêu Chuẩn (Miễn phí). Link này cũng sẽ được gửi kèm trong email xác nhận trước buổi học.</div>
-        <a href="https://zalo.me/g/lvdf21pwtpsumzc2pjh0" target="_blank" rel="noopener" class="zalo-cta">Tham Gia Nhóm Zalo Vé Tiêu Chuẩn</a>
+        <div class="step-title">Tham gia nhóm Zalo Vé VIP</div>
+        <div class="step-desc">Bấm vào nút bên dưới để tham gia ngay nhóm Zalo riêng dành cho học viên Vé VIP. Link này cũng sẽ được gửi kèm trong email xác nhận trước buổi học.</div>
+        <a href="https://zalo.me/g/bhfdaqfxjgwrvahqa9ug" target="_blank" rel="noopener" class="zalo-cta">Tham Gia Nhóm Zalo Vé VIP</a>
       </div>
     </div>
   </div>
@@ -106,14 +109,16 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
     document.getElementById('orderId').textContent = order.orderId;
     document.getElementById('orderName').textContent = order.name || '—';
     document.getElementById('orderEmail').textContent = order.email || '—';
+    const amt = Number(order.totalAmount || 0).toLocaleString('en-US').replace(/,/g, '.');
+    document.getElementById('orderAmount').textContent = amt + 'đ';
 
     const purchaseTrackedKey = 'purchase_tracked_' + order.orderId;
     if (typeof fbq === 'function' && !sessionStorage.getItem(purchaseTrackedKey)) {
-      fbq('track', 'CompleteRegistration', {
+      fbq('track', 'Purchase', {
         content_name: 'Master Class Bình An Nội Tâm',
-        content_category: 'FREE',
+        content_category: 'VIP',
         currency: 'VND',
-        value: 0
+        value: order.totalAmount || 0
       });
       sessionStorage.setItem(purchaseTrackedKey, '1');
     }
