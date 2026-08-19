@@ -154,12 +154,12 @@ p { color: var(--text); }
 .pillar-card.forest { border-top: 4px solid var(--accent); }
 
 /* Benefit 01-04 grid */
-.benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 44px; }
-@media (max-width: 720px) { .benefit-grid { grid-template-columns: 1fr; } }
-.benefit-card { background: var(--surface); border-radius: var(--radius); padding: 32px 28px; border: 1px solid var(--border); box-shadow: 0 16px 34px -20px var(--shadow), 0 1px 3px var(--shadow-soft); }
-.benefit-card .idx { display: block; text-align: left; font-family: var(--font-h); font-size: 2.1rem; font-weight: 800; color: var(--gold); margin-bottom: 10px; line-height: 1; }
-.benefit-card h3 { margin-bottom: 12px; }
-.benefit-card p { color: var(--text-muted); font-size: 1.05rem; }
+.takeaway-list { display: flex; flex-direction: column; max-width: 720px; margin: 44px auto 0; text-align: left; }
+.takeaway-item { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); }
+.takeaway-item:last-child { border-bottom: none; }
+.takeaway-item .idx { font-family: var(--font-h); font-size: 2.3rem; font-weight: 800; color: var(--gold); flex: none; width: 64px; line-height: 1; }
+.takeaway-item h3 { margin-bottom: 10px; }
+.takeaway-item p { color: var(--text-muted); font-size: 1.05rem; margin: 0; }
 
 /* Program roadmap */
 .session-list { display: flex; flex-direction: column; gap: 22px; margin-top: 44px; }
@@ -196,12 +196,11 @@ p { color: var(--text); }
 .community-banner img { width: 100%; height: clamp(220px, 32vw, 380px); object-fit: cover; }
 
 /* Testimonials */
-.testi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
-@media (max-width: 980px) { .testi-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .testi-grid { grid-template-columns: 1fr; } }
-.testi-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 14px 30px -20px var(--shadow), 0 1px 3px var(--shadow-soft); }
+.testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 44px; }
+@media (max-width: 720px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 30px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 14px 30px -20px var(--shadow), 0 1px 3px var(--shadow-soft); }
 .testi-head { display: flex; align-items: center; gap: 12px; }
-.testi-head img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-light); box-shadow: 0 3px 8px -2px var(--shadow-soft); }
+.testi-head img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold-light); box-shadow: 0 3px 8px -2px var(--shadow-soft); }
 .testi-head .name { font-weight: 800; font-size: 1rem; color: var(--heading); }
 .testi-head .role { font-size: 0.88rem; color: var(--text-muted); }
 .testi-card p { font-size: 0.98rem; color: var(--text-muted); font-style: italic; line-height: 1.6; }
@@ -372,26 +371,34 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
     <div class="community-banner" style="max-width:760px; margin:36px auto 0;">
       <img src="assets/workshop-listening.jpg" alt="Học viên lắng nghe trong buổi chia sẻ trực tiếp">
     </div>
-    <div class="benefit-grid text-left">
-      <div class="benefit-card">
+    <div class="takeaway-list">
+      <div class="takeaway-item">
         <span class="idx">01</span>
-        <h3>Gọi tên sự giằng xé nội tâm</h3>
-        <p>Dũng cảm nhận diện cảm giác tội lỗi, nỗi sợ "bỏ rơi gia đình" hay cảm giác "thấy mình chưa đủ" đang âm thầm chi phối bạn. Mở ra một góc nhìn hoàn toàn mới về sự <strong class="em-deep">Cân bằng đích thực</strong> giữa Gia đình và Sự nghiệp.</p>
+        <div>
+          <h3>Gọi tên sự giằng xé nội tâm</h3>
+          <p>Dũng cảm nhận diện cảm giác tội lỗi, nỗi sợ "bỏ rơi gia đình" hay cảm giác "thấy mình chưa đủ" đang âm thầm chi phối bạn. Mở ra một góc nhìn hoàn toàn mới về sự <strong class="em-deep">Cân bằng đích thực</strong> giữa Gia đình và Sự nghiệp.</p>
+        </div>
       </div>
-      <div class="benefit-card">
+      <div class="takeaway-item">
         <span class="idx">02</span>
-        <h3>Giải phóng cảm xúc quá tải</h3>
-        <p>Thấu hiểu những tín hiệu kiệt sức từ tâm trí và cơ thể sau gần một thập kỷ vun vén cho người khác. Học cách giải tỏa sự bất an để lấy lại tâm trí bình an, hiện diện trọn vẹn và yêu thương gia đình bằng một năng lượng tươi mới.</p>
+        <div>
+          <h3>Giải phóng cảm xúc quá tải</h3>
+          <p>Thấu hiểu những tín hiệu kiệt sức từ tâm trí và cơ thể sau gần một thập kỷ vun vén cho người khác. Học cách giải tỏa sự bất an để lấy lại tâm trí bình an, hiện diện trọn vẹn và yêu thương gia đình bằng một năng lượng tươi mới.</p>
+        </div>
       </div>
-      <div class="benefit-card">
+      <div class="takeaway-item">
         <span class="idx">03</span>
-        <h3>Chạm lại "Giá trị cốt lõi" bên trong</h3>
-        <p>Từng bước bóc tách những danh xưng "người vợ đảm, người mẹ hoàn hảo" mà xã hội gán lên bạn. Khơi dậy sức sống, sự dũng cảm lựa chọn và những thế mạnh riêng để tự tin khẳng định: "Tôi là ai và giá trị riêng của tôi nằm ở đâu".</p>
+        <div>
+          <h3>Chạm lại "Giá trị cốt lõi" bên trong</h3>
+          <p>Từng bước bóc tách những danh xưng "người vợ đảm, người mẹ hoàn hảo" mà xã hội gán lên bạn. Khơi dậy sức sống, sự dũng cảm lựa chọn và những thế mạnh riêng để tự tin khẳng định: "Tôi là ai và giá trị riêng của tôi nằm ở đâu".</p>
+        </div>
       </div>
-      <div class="benefit-card">
+      <div class="takeaway-item">
         <span class="idx">04</span>
-        <h3>Sở hữu "Tấm Bản Đồ La Bàn Nội Tâm"</h3>
-        <p>Có lộ trình rõ ràng để thiết kế một cuộc sống làm chủ chính mình: vừa kiến tạo một mái ấm hạnh phúc, vừa đặt nền móng cho một <strong class="em-deep">Sự nghiệp ý nghĩa</strong> (tự chủ tài chính, làm công việc dựa trên giá trị và thế mạnh bản thân).</p>
+        <div>
+          <h3>Sở hữu "Tấm Bản Đồ La Bàn Nội Tâm"</h3>
+          <p>Có lộ trình rõ ràng để thiết kế một cuộc sống làm chủ chính mình: vừa kiến tạo một mái ấm hạnh phúc, vừa đặt nền móng cho một <strong class="em-deep">Sự nghiệp ý nghĩa</strong> (tự chủ tài chính, làm công việc dựa trên giá trị và thế mạnh bản thân).</p>
+        </div>
       </div>
     </div>
     <div class="community-banner" style="max-width:900px; margin:44px auto 0;">
@@ -503,10 +510,6 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
         </ul>
         <p class="coach-quote">"Là người <strong class="em-deep">từng đi qua giai đoạn mất kết nối</strong> với giá trị và hướng đi của bản thân, Hà tin rằng những bất an trong cuộc sống không phải lúc nào cũng là vấn đề cần 'sửa chữa' - đôi khi đó là lời mời để chúng ta quay về, hiểu mình và bước sang một chương mới sống trọn vẹn hơn."</p>
       </div>
-    </div>
-
-    <div class="community-banner">
-      <img src="assets/community-hillside.jpg" alt="Cộng đồng học viên MCoach">
     </div>
 
     <div class="text-center mt-12">
