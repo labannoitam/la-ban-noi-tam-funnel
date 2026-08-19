@@ -111,7 +111,10 @@ p { color: var(--text); }
 /* Hero */
 .hero { padding: clamp(48px, 8vw, 80px) 0 var(--section-py); background: radial-gradient(ellipse at top, var(--accent-soft) 0%, var(--bg) 62%); text-align: center; }
 .hero .container { max-width: 760px; }
+.hero-tagline { color: var(--text-muted); font-size: 1.02rem; max-width: 480px; margin: 18px auto 6px; }
 .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 620px; margin: 24px auto 0; }
+.hero-image { margin: 32px auto 0; max-width: 720px; aspect-ratio: 16/9.6; border-radius: var(--radius); overflow: hidden; box-shadow: 0 30px 60px -22px var(--shadow), 0 6px 16px -6px var(--shadow-soft); border: 1px solid rgba(255,255,255,.4); }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
 .hero-cta-wrap { margin-top: 32px; }
 @media (max-width: 640px) { .hero-cta-wrap { display: none; } }
 
@@ -132,6 +135,9 @@ p { color: var(--text); }
 .narrative p { font-size: 1.1rem; margin-bottom: 18px; }
 .narrative p.muted { color: var(--text-muted); }
 .narrative p.q { font-weight: 600; color: var(--accent-deep); }
+.pain-list { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.pain-list li { position: relative; padding-left: 24px; font-size: 1.1rem; }
+.pain-list li::before { content: ""; position: absolute; left: 0; top: 10px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--accent-soft); }
 
 /* Section breaker image */
 .section-breaker-img { max-width: 460px; margin: 40px auto 8px; border-radius: var(--radius); overflow: hidden; box-shadow: 0 26px 52px -22px var(--shadow), 0 3px 10px -2px var(--shadow-soft); border: 1px solid rgba(255,255,255,.4); }
@@ -294,10 +300,15 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1>Bình An Nội Tâm</h1>
+    <span class="eyebrow">Chương Trình Đào Tạo Miễn Phí · 3 Buổi Online qua Zoom</span>
+    <p class="hero-tagline">Dành cho người phụ nữ muốn kiến tạo cuộc sống trọn vẹn, đủ đầy từ gốc rễ</p>
+    <h1>La Bàn Nội Tâm</h1>
     <p class="hero-sub">
-      Tấm bản đồ giúp phụ nữ tìm lại sự kết nối với bản thân - <strong class="em-deep">kiến tạo một cuộc sống bình an</strong> nơi hạnh phúc gia đình và sự nghiệp ý nghĩa cùng song hành.
+      Phương pháp giúp hơn <strong class="em-deep">500 phụ nữ</strong> giải mã Hệ Điều Hành Nội Tại - "<strong class="em-deep">mảnh ghép còn thiếu</strong>" để chạm tới <strong class="em-deep">bình an gốc rễ</strong>, khi thiền, chánh niệm hay quản trị cảm xúc vẫn chưa đủ.
     </p>
+    <div class="hero-image">
+      <img src="assets/ảnh cộng đồng.jpg" alt="Cộng đồng học viên La Bàn Nội Tâm giơ tay giữa núi đồi">
+    </div>
     <div class="hero-cta-wrap">
       <a href="#dang-ky" class="btn-primary">Kiến Tạo Cuộc Sống Bình An Ngay Hôm Nay</a>
     </div>
@@ -308,14 +319,14 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
 <section class="section section-alt">
   <div class="container-narrow narrative">
     <h2 class="text-center mt-4">Sự cố gắng của bạn có đang cho bạn cuộc sống bạn mong muốn?</h2>
-    <p class="mt-8 text-center">Sau gần một thập kỷ vun vén cho gia đình, bạn có đang quên vun bồi <strong class="em-deep">sự bình an từ gốc rễ</strong> bên trong mình?</p>
-    <p class="q">Hãy tự hỏi mình:</p>
-    <p><strong class="em-deep">Bạn có đang thực sự bình an</strong> với cuộc sống hiện tại, hay mỗi ngày trôi qua đều <strong class="em-deep">kiệt sức vì cố gắng sống tròn</strong> nhiều vai trò: một người vợ tốt, một người mẹ đảm, một người phụ nữ luôn biết nghĩ cho người khác?</p>
-    <p>Bạn đã dành cả một thập kỷ vun vén cho tổ ấm, nuôi con lớn khôn. Nhưng sau gần 10 năm nhìn lại, có bao giờ bạn tự hỏi: "Ngoài việc làm vợ, làm mẹ... <strong class="em-deep">mình thực sự là ai?</strong> <strong class="em-deep">Năng lực và giá trị riêng</strong> của mình nằm ở đâu?"</p>
-    <p>Bạn vẫn <strong class="em-deep">ôm ấp những hoài bão, ước mơ</strong> về một công việc của riêng mình. Nhưng mỗi khi tính bắt đầu, bạn lại ngập ngừng vì sợ. Sợ không làm nổi, sợ dồn sức cho công việc thì con cái chịu thiệt thòi, sợ bị người thân trách là "<strong class="em-deep">đòi hỏi, không biết hài lòng với hiện tại</strong>"?</p>
-    <p>Bạn từng thử tìm hướng đi mới, thử làm cái này cái kia nhưng cứ loay hoay mãi. Bạn chưa biết đâu mới là thế mạnh thực sự của mình, chưa biết làm sao để có một <strong class="em-deep">công việc ý nghĩa</strong>, vừa thong dong chủ động <strong class="em-deep">thời gian cho gia đình</strong>, vừa <strong class="em-deep">cảm thấy có giá trị bản thân</strong>?</p>
-    <p class="muted">Bạn đã tìm hiểu về nội tâm, làm việc với cảm xúc, thực hành thiền, chánh niệm hay các công cụ để thấu hiểu bản thân… nhưng <strong class="em-deep">vòng lặp bất an, mơ hồ vẫn quay lại?</strong></p>
-    <p class="muted">Bạn đang ở một giai đoạn chuyển tiếp của cuộc đời, nhưng đã bao giờ tự hỏi: mình có đang biết cách vun bồi nội lực từ gốc rễ, để đủ vững vàng bước vào chặng đường phía trước?</p>
+    <p class="mt-8 text-center">Sau gần một thập kỷ vun vén cho gia đình, <strong class="em-deep">bạn có đang quên vun bồi sự bình an từ gốc rễ?</strong></p>
+    <ul class="pain-list">
+      <li>Bạn đã đọc sách, học về cảm xúc, thực hành thiền, chánh niệm, thấu hiểu bản thân… nhưng những <strong class="em-deep">vòng lặp bất an, mệt mỏi</strong> vẫn quay trở lại?</li>
+      <li>Khi kiệt sức cố gắng làm tròn nhiều vai trò, có lúc nào bạn tự hỏi: <strong class="em-deep">"Ngoài làm vợ, làm mẹ… mình thực sự là ai?"</strong></li>
+      <li>Bạn vẫn có những ước mơ và hoài bão riêng, nhưng chưa dám bước tới vì <strong class="em-deep">sợ thất bại</strong>, sợ ảnh hưởng gia đình, sợ mình đang "đòi hỏi quá nhiều"?</li>
+      <li>Bạn muốn một công việc ý nghĩa, được sống với năng lực và giá trị của mình mà vẫn có thời gian cho gia đình - nhưng càng tìm càng thấy <strong class="em-deep">mơ hồ về hướng đi</strong>?</li>
+      <li>Và sâu bên trong, bạn cảm nhận mình đang bước vào một chặng mới của cuộc đời, nhưng <strong class="em-deep">chiếc la bàn cũ dường như không còn chỉ được đường</strong>?</li>
+    </ul>
 
     <div class="section-breaker-img">
       <img src="assets/story-coach-warm.jpg" alt="Coach Hà Nguyễn">
@@ -334,7 +345,7 @@ src="https://www.facebook.com/tr?id=2985723285152509&ev=PageView&noscript=1"
     <p class="mt-4">Nhưng sự <strong class="em-deep">bình an và đủ đầy</strong> đích thực <strong class="em-deep">chưa bao giờ đến từ sự đánh đổi</strong>: hoặc hy sinh sự nghiệp cho gia đình, hoặc đánh đổi hạnh phúc hôn nhân để chạy theo công việc.</p>
   </div>
   <div class="container text-center mt-12">
-    <h2>Sự bình an thực sự khi bạn sở hữu <span style="color:var(--gold)">LA BÀN NỘI TÂM</span></h2>
+    <h2><span style="color:var(--gold)">Bình an gốc rễ</span> khi bạn sở hữu <span style="color:var(--gold)">La Bàn Nội Tâm</span></h2>
     <p class="mt-4 text-muted" style="max-width:640px; margin:16px auto 0;">Phương pháp giúp bạn khơi dậy những giá trị sẵn có bên trong và <strong class="em-deep">thiết kế lại một cuộc đời bình an đủ đầy từ gốc rễ</strong>.</p>
     <div class="pillar-grid">
       <div class="pillar-card terracotta">
