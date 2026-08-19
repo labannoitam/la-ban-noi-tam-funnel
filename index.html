@@ -210,11 +210,6 @@ p { color: var(--text); }
 @media (max-width: 780px) { .price-grid { grid-template-columns: 1fr; } }
 .price-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 36px 32px; display: flex; flex-direction: column; box-shadow: 0 18px 36px -22px var(--shadow), 0 1px 3px var(--shadow-soft); }
 .price-card.vip { border-color: var(--gold); box-shadow: 0 28px 54px -20px var(--shadow), 0 2px 8px -2px var(--shadow-soft); position: relative; }
-.price-card.vip::before {
-  content: "ĐƯỢC CHỌN NHIỀU NHẤT"; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: var(--gold); color: #2A1D0C; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em;
-  padding: 6px 16px; border-radius: 999px; white-space: nowrap;
-}
 .price-card .tier-name { font-family: var(--font-h); font-size: 1.35rem; font-weight: 800; color: var(--heading); }
 .price-card .tier-sub { color: var(--gold); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .price-card.free .tier-sub { font-size: 1.6rem; font-family: var(--font-h); text-transform: none; letter-spacing: normal; margin: 6px 0 4px; }
@@ -226,8 +221,8 @@ p { color: var(--text); }
 .price-card li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
 .price-card.vip li::before { color: var(--gold); }
 .price-card .btn-tier { text-align: center; width: 100%; padding: 15px; border-radius: 999px; font-weight: 700; font-size: 1.02rem; }
-.price-card.free .btn-tier { background: var(--surface-2); color: var(--accent-deep); border: 1.5px solid var(--border); }
-.price-card.vip .btn-tier { background: var(--gold); color: #2A1D0C; box-shadow: 0 10px 24px rgba(192,138,62,0.32); }
+.price-card.free .btn-tier { background: linear-gradient(155deg, var(--gold-light) 0%, var(--gold) 52%, #8C5F2A 100%); color: #fff; box-shadow: 0 12px 26px -10px var(--shadow), inset 0 1px 0 rgba(255,255,255,.3); }
+.price-card.vip .btn-tier { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
 
 /* Final CTA / registration */
 .final-cta { background: linear-gradient(160deg, var(--accent) 0%, var(--accent-deep) 85%); color: #fff; border-radius: 24px; padding: clamp(36px, 6vw, 64px); }
